@@ -1,0 +1,72 @@
+body {
+    font-family: 'Open Sans Condensed', sans-serif;
+}
+
+.top_menu {
+    background: #242e36 !important;
+    font-size: 16px;
+}
+.top_menu li a {
+    color: white;
+    text-transform: uppercase;
+    padding-left: 25px;
+}
+.top_menu li a:hover {
+    color: gray;
+    text-underline: none;
+}
+
+.offers {
+    text-align: center;
+}
+
+.socials {
+    background: black;
+    height: 50px;
+    width: 100%;
+}
+
+.socials i {
+    color: #cacaca;
+    margin-left: 20px;
+    margin-top: 15px;
+}
+
+.bottom_menu {
+    background: #313640;
+    color: #cacaca;
+}
+
+.bottom_menu a {
+    color: #cacaca;
+}
+
+footer {
+    margin-top: 20px;
+}
+
+footer a {
+    color: white;
+}
+footer a:hover {
+    color: #cacaca;
+    text-decoration: none;
+}
+
+hr {
+    height: 4px;
+    width: 70px;
+    /*text-align: center;*/
+    position: relative;
+    background: #cacaca;
+    margin: 0 auto;
+    margin-bottom: 15px;
+    border: 0;
+    margin-left: 0;
+}
+
+.navbar-expand-lg .navbar-nav .dropdown-menu-right {
+    background: #242e36;
+    border-radius: 0;
+    border: 0;
+}

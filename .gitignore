@@ -1,0 +1,29 @@
+# shit
+*.swp
+*.swn
+*.swo
+*.pyc
+*.jar
+*.log
+celerybeat.pid
+celerybeat-schedule
+/*.log
+/logs
+*.sqlite3
+
+# IDE
+/.project
+/.pydevproject
+/.settings
+/.idea
+
+# project
+/core/settings/local.py
+/TODO.txt
+/core/media_files/
+/core/static_files/
+/core/settings/whoosh_index
+# coverage data
+.coverage
+celerybeat-schedule.db
+.env

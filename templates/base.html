@@ -1,0 +1,173 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>{% block title %}{% endblock %} | Amazing Asia</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="{% static 'vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+    <link href="{% static 'css/fonts.css' %}" rel="stylesheet">
+    <link href="{% static 'vendor/font-awesome/css/font-awesome.min.css' %}" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="{% static 'css/modern-business.css' %}" rel="stylesheet">
+    <link href="{% static 'css/project.css' %}" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300" rel="stylesheet">
+
+</head>
+
+<body>
+
+<!-- Navigation -->
+<nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark fixed-top top_menu">
+    <div class="container">
+        <a class="navbar-brand" href="{% url 'ui:index' %}">Amazing Asia</a>
+        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownPortfolio" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Destinations
+                    </a>
+                    <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownPortfolio">
+                        {% for destination in all_destinations %}
+                            <a class="dropdown-item" href="{% url 'resorts:destination-detail' destination.id %}">{{ destination.name }}</a>
+                        {% endfor %}
+                    </div>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="">Special Offers</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="">Packages</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="">Tales</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="">Contact Us</a>
+                </li>
+                <li class="nav-item">
+                    <button class="btn btn-default nav-link" href="">Call us +960 3327584</button>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<header>
+    <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+        <ol class="carousel-indicators">
+            {#            <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>#}
+            {#            <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>#}
+            {#            <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>#}
+        </ol>
+        <div class="carousel-inner" role="listbox">
+            <!-- Slide One - Set the background image for this slide in the line below -->
+            <div class="carousel-item active" style="background-image: url('{% static 'img/index.jpg' %}')">
+                <div class="carousel-caption d-none d-md-block">
+                    {#                    <h3>First Slide</h3>#}
+                    {#                    <p>This is a description for the first slide.</p>#}
+                </div>
+            </div>
+            {#            <!-- Slide Two - Set the background image for this slide in the line below -->#}
+            {#            <div class="carousel-item" style="background-image: url('http://placehold.it/1900x1080')">#}
+            {#                <div class="carousel-caption d-none d-md-block">#}
+            {#                    <h3>Second Slide</h3>#}
+            {#                    <p>This is a description for the second slide.</p>#}
+            {#                </div>#}
+            {#            </div>#}
+            {#            <!-- Slide Three - Set the background image for this slide in the line below -->#}
+            {#            <div class="carousel-item" style="background-image: url('http://placehold.it/1900x1080')">#}
+            {#                <div class="carousel-caption d-none d-md-block">#}
+            {#                    <h3>Third Slide</h3>#}
+            {#                    <p>This is a description for the third slide.</p>#}
+            {#                </div>#}
+            {#            </div>#}
+        </div>
+        {#        <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">#}
+        {#            <span class="carousel-control-prev-icon" aria-hidden="true"></span>#}
+        {#            <span class="sr-only">Previous</span>#}
+        {#        </a>#}
+        {#        <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">#}
+        {#            <span class="carousel-control-next-icon" aria-hidden="true"></span>#}
+        {#            <span class="sr-only">Next</span>#}
+        {#        </a>#}
+    </div>
+</header>
+
+<!-- Page Content -->
+<div class="container">
+
+    {% block content %}{% endblock %}
+
+</div>
+<!-- /.container -->
+
+<!-- Footer -->
+<footer>
+    <div class="socials m-0" style="margin-left: 50%">
+        <i class="fa fa-facebook"></i>
+        <i class="fa fa-twitter"></i>
+        <i class="fa fa-google-plus"></i>
+        <i class="fa fa-pinterest"></i>
+        <i class="fa fa-linkedin"></i>
+    </div>
+    <div class="py-5 bg-dark">
+        <div class="container">
+            <div class="row text-white">
+                <div class="col-lg-3">
+                    <h3>Destinations</h3>
+                    <hr>
+                    <ul class="list-unstyled">
+                        {% for destination in all_destinations %}
+                        <li>
+                            <a href="{% url 'resorts:destination-detail' destination.id %}">{{ destination.name }}</a>
+                        </li>
+                        {% endfor %}
+                    </ul>
+                </div>
+                <div class="col-lg-3">
+                    <h3>Contact Us</h3>
+                    <hr>
+                    <ul class="list-unstyled">
+                        <li>Phone : +960 332-7584</li>
+                        <li>Hotline : +960 773-6564</li>
+                        <li>Email : res@amazingasiatravels.com</li>
+                    </ul>
+                </div>
+                <div class="col-lg-3">
+                    <h3>Important Links</h3>
+                    <hr>
+                    <ul class="list-unstyled">
+                        <li><a href="">Privacy Policy</a></li>
+                        <li><a href="">Send an Enquiry</a></li>
+                        <li><a href="">Contact Us</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3">
+                    <h3>Affiliates</h3>
+                    <hr>
+                </div>
+            </div>
+        </div>
+        <!-- /.container -->
+    </div>
+</footer>
+
+<!-- Bootstrap core JavaScript -->
+<script src="{% static 'vendor/jquery/jquery.min.js' %}"></script>
+<script src="{% static 'vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+
+</body>
+
+</html>
