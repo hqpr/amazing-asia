@@ -1,2 +1,21 @@
-{% extends 'base.html' %}
+{% extends 'base_page.html' %}
+{% load thumbnail %}
+
 {% block title %} {{ object.name }} {% endblock %}
+
+{% block content %}
+    <h1 class="text-center mt-5">{{ destination.name }} Destinations</h1>
+    <div class="row">
+        {% for resort in resorts %}
+            <div class="col-lg-4">
+                {% if resort.resortimage_set.all %}
+                {% thumbnail resort.resortimage_set.first "345x345" crop="center" as im %}
+                    <img src="{{ im.url }}" />
+                {% endthumbnail %}
+            {% endif %}
+                <br>
+                {{ resort.name }}
+            </div>
+        {% endfor %}
+    </div>
+{% endblock %}

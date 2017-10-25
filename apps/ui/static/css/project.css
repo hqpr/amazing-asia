@@ -70,3 +70,7 @@ hr {
     border-radius: 0;
     border: 0;
 }
+
+.nav-item {
+    margin-right: 10px;
+}

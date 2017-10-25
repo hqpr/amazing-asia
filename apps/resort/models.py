@@ -15,7 +15,6 @@ class Resort(models.Model):
     description = models.TextField(blank=True, null=True)
     villa_view = models.TextField(blank=True, null=True)
     max_occupancy = models.IntegerField(blank=True, null=True)
-    image = models.ForeignKey('ResortImage', blank=True, null=True)
     is_active = models.BooleanField(default=False)
     is_featured = models.BooleanField(default=False)
 
@@ -25,6 +24,7 @@ class Resort(models.Model):
 
 class ResortImage(models.Model):
     image = models.ImageField(upload_to='resorts/')
+    resort = models.ForeignKey('Resort')
 
     def __str__(self):
         return "%s" % self.image

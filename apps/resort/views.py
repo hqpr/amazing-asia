@@ -22,4 +22,5 @@ class DestinationDetailView(DetailView):
 
     def get_context_data(self, **kwargs):
         context = super(DestinationDetailView, self).get_context_data(**kwargs)
+        context['resorts'] = Resort.objects.filter(is_active=True, destination=self.object)
         return context
