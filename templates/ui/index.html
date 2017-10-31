@@ -9,7 +9,8 @@
         <div class="col-md-6">
             <div class="card h-100">
                 <div class="card-body">
-                    <p class="card-text">Adaaran Club Rannalhi</p>
+            <img src="{{ resort_top_left.resortimage_set.first.image.url }}" alt="">
+                    <p class="card-text">{{ resort_top_left }}</p>
                 </div>
             </div>
         </div>
@@ -17,14 +18,16 @@
             <div>
                 <div class="card h-100">
                     <div class="card-body">
-                        <p class="card-text">Adaaran Club Rannalhi</p>
+                        <img src="{{ resort_top_right.resortimage_set.first.image.url }}" alt="">
+                        <p class="card-text">{{ resort_top_right }}</p>
                     </div>
                 </div>
             </div>
             <div>
                 <div class="card h-100">
                     <div class="card-body">
-                        <p class="card-text">Adaaran Club Rannalhi</p>
+                        <img src="{{ resort_bottom_left.resortimage_set.first.image.url }}" alt="">
+                        <p class="card-text">{{ resort_bottom_left }}</p>
                     </div>
                 </div>
             </div>
@@ -36,8 +39,8 @@
             <div class="card h-100">
                 <div class="card-body">
                     <p class="card-text">
-                        NORTH MALE ATOLL <br>
-                        Sheraton Full Moon Resort</p>
+                        <img src="{{ resort_bottom_center.resortimage_set.first.image.url }}" alt="">
+                        {{ resort_bottom_center }}</p>
                 </div>
             </div>
 

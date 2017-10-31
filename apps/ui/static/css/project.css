@@ -20,6 +20,10 @@ body {
     text-align: center;
 }
 
+.offers img {
+    width: 100%;
+}
+
 .socials {
     background: black;
     height: 50px;
