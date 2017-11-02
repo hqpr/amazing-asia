@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     'apps.ui.apps.UiConfig',
     'apps.resort.apps.ResortConfig',
     'apps.offers.apps.OffersConfig',
+    'apps.enquiry.apps.EnquiryConfig',
 ]
 
 MIDDLEWARE = [

@@ -23,4 +23,5 @@ urlpatterns = [
     url(r'^', include('apps.ui.urls', namespace='ui')),
     url(r'^resorts/', include('apps.resort.urls', namespace='resorts')),
     url(r'^offers/', include('apps.offers.urls', namespace='offers')),
+    url(r'^enquiry/', include('apps.enquiry.urls', namespace='enquiry')),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
