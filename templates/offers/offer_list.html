@@ -1,0 +1,54 @@
+{% extends 'base_page.html' %}
+{% load thumbnail %}
+
+{% block title %} Special Offers {% endblock %}
+
+{% block content %}
+    <h1 class="text-center mt-5 mb-5">Special Offers</h1>
+    {% for offer in object_list %}
+        <div class="row offer">
+            <div class="col-md-3">
+                {% if offer.image %}
+                    {% thumbnail offer.image "260x235" crop="center" as im %}
+                        <img src="{{ im.url }}" />
+                    {% endthumbnail %}
+                {% endif %}
+            </div>
+            <div class="col-md-9 offer_content">
+                <div class="offer_title">
+                <a href="{% url 'offers:detail' offer.id %}">
+                    <h3>{{ offer.name }}</h3>
+                    <hr>
+                    <p>{{ offer.description|safe }}</p>
+                    <p><b>Offer Expires On:</b> {{ offer.expires_at }} </p>
+                    <p><b>For Stays Between:</b> {{ offer.stays_from }} - {{ offer.stays_to }}  </p>
+                </a>
+                </div>
+            </div>
+        </div>
+    {% endfor %}
+    <div class="row">
+
+        {% if is_paginated %}
+            <ul class="pagination">
+                {% if page_obj.has_previous %}
+                    <li><a href="?page={{ page_obj.previous_page_number }}">&laquo;</a></li>
+                {% else %}
+                    <li class="disabled"><span>&laquo;</span></li>
+                {% endif %}
+                {% for i in page_obj.paginator.page_range %}
+                    {% if page_obj.number == i %}
+                        <li class="active"><span>{{ i }} <span class="sr-only">(current)</span></span></li>
+                    {% else %}
+                        <li><a href="?page={{ i }}">{{ i }}</a></li>
+                    {% endif %}
+                {% endfor %}
+                {% if page_obj.has_next %}
+                    <li><a href="?page={{ page_obj.next_page_number }}">&raquo;</a></li>
+                {% else %}
+                    <li class="disabled"><span>&raquo;</span></li>
+                {% endif %}
+            </ul>
+        {% endif %}
+    </div>
+{% endblock %}

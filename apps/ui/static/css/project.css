@@ -1,5 +1,6 @@
 body {
     font-family: 'Open Sans Condensed', sans-serif;
+    letter-spacing: 1px;
 }
 
 .top_menu {
@@ -25,10 +26,6 @@ body {
 .offers {
     text-align: center;
 }
-
-/*.offers img {*/
-    /*width: 100%;*/
-/*}*/
 
 .socials {
     background: black;
@@ -140,4 +137,44 @@ hr {
     color: #d8d8d8;
     padding: 10px 15px;
     cursor: pointer;
+}
+
+.offer {
+    border: 1px solid #cfcfcf;
+    margin-bottom: 30px;
+    border-top: 2px solid #282828;
+}
+
+.offer_content {
+    border-left: 1px solid #cfcfcf;
+}
+
+.offer_content a {
+    text-decoration: none;
+    color: #282828;
+}
+
+.offer_content h3 {
+    font-weight: 700;
+}
+
+.offer_title {
+    padding: 10px;
+}
+
+.offer_content hr {
+    height: 1px;
+    width: 100%;
+    position: relative;
+    background: #cfcfcf;
+    margin: 0 auto;
+    margin-bottom: 15px;
+    border: 0;
+    margin-left: 0;
+}
+
+.page_content .btn-danger {
+    border-radius: 0;
+    background: #b03232;
+    padding: 15px;
 }

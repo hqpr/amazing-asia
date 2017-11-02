@@ -1,0 +1,24 @@
+{% extends 'base_page.html' %}
+{% load static %}
+
+{% block title %} {{ object.name }}{% endblock %}
+
+{% block content %}
+    <div class="text-center mt-5">
+        <h1>{{ object.name }}</h1>
+        <h4>90% Discount on Room Rates Special Offer</h4>
+    </div>
+    <div class="row page_content">
+        <div class="col-md-6 mb-5">
+            {% if object.image %}
+                <img class="img-thumbnail" src="{{ object.image.url }}" alt="">
+            {% endif %}
+        </div>
+        <div class="col-md-6 ">
+            <div>
+                <p>{{ object.description|safe }}</p>
+                <button class="btn btn-danger">BOOK THIS PROPERTY</button>
+            </div>
+        </div>
+    </div>
+{% endblock %}

@@ -1,4 +1,3 @@
-from django.shortcuts import render
 from django.views.generic import ListView, DetailView
 
 from .models import Destination, Resort
@@ -10,19 +9,16 @@ class ResortListView(ListView):
 
 class DestinationListView(ListView):
     model = Destination
+    paginate_by = 9
 
-
-class DestinationDetailView(DetailView):
-    model = Destination
-    template_name = 'resort/destination_detail.html'
-
-    def get_object(self, *args, **kwargs):
-        object = Destination.objects.get(id=self.kwargs['destination_id'])
-        return object
+    def get_queryset(self, *args, **kwargs):
+        pk = self.kwargs.get('destination_id')
+        queryset = Resort.objects.filter(is_active=True, destination=pk)
+        return queryset
 
     def get_context_data(self, **kwargs):
-        context = super(DestinationDetailView, self).get_context_data(**kwargs)
-        context['resorts'] = Resort.objects.filter(is_active=True, destination=self.object)
+        context = super().get_context_data(**kwargs)
+        context['object'] = Destination.objects.get(id=self.kwargs['destination_id'])
         return context
 
 
