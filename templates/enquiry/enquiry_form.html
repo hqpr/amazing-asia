@@ -1,0 +1,12 @@
+{% extends 'base_page.html' %}
+
+{% block title %} add enquiry {% endblock title %}
+
+{% block content %}
+    <div class="mt-5">
+    <form action="" method="post">
+        {% csrf_token %}
+        {{ form }}
+    </form>
+    </div>
+{% endblock content %}

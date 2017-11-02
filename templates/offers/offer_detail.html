@@ -17,7 +17,7 @@
         <div class="col-md-6 ">
             <div>
                 <p>{{ object.description|safe }}</p>
-                <button class="btn btn-danger">BOOK THIS PROPERTY</button>
+                <a href="{% url 'enquiry:add' %}" class="btn btn-danger">BOOK THIS PROPERTY</a>
             </div>
         </div>
     </div>

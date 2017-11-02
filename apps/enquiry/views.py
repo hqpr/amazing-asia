@@ -1,5 +1,9 @@
-from django.shortcuts import render
+from django.views.generic import CreateView
+
+from .models import Enquiry
+from .forms import EnquiryForm
 
 
-def enquiry(request):
-    pass
+class AddEnquiryView(CreateView):
+    model = Enquiry
+    form_class = EnquiryForm
