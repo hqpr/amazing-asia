@@ -43,11 +43,12 @@
 
                     <div class="carousel-item active" style="background-image: url('{{ object.resortimage_set.first.image.url }}')">
                     </div>
-
+                    {% if object.resortimage_set.all %}
                     {% for im in object.resortimage_set.all %}
                         <div class="carousel-item" style="background-image: url('{{ im.image.url }}')">
                         </div>
                     {% endfor %}
+                    {% endif %}
 
                 </div>
                 <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">

@@ -1,54 +1,55 @@
 {% extends 'base.html' %}
+{% load thumbnail %}
 {% block title %} Home {% endblock title %}
+
 
 {% block content %}
     <div class="text-center">
-        <h1 class="mt-5">Featured Resorts</h1>
+        <h1 class="mt-5 mb-5">Featured Resorts</h1>
     </div>
     <div class="row offers">
         <div class="col-md-6">
-            <div class="card h-100">
-                <div class="card-body">
-            <img src="{{ resort_top_left.resortimage_set.first.image.url }}" alt="">
-                    <p class="card-text">{{ resort_top_left }}</p>
-                </div>
+            <div style="margin-left: 82px;">
+                {% thumbnail resort_top_left.resortimage_set.first.image "475x275" crop="center" as im %}
+                    <a href="{% url 'resorts:resort-detail' resort_top_left.id %}">
+                        <img data-u="image" src="{{ im.url }}" />
+                    </a>
+                {% endthumbnail %}
             </div>
         </div>
         <div class="col-md-6">
-            <div>
-                <div class="card h-100">
-                    <div class="card-body">
-                        <img src="{{ resort_top_right.resortimage_set.first.image.url }}" alt="">
-                        <p class="card-text">{{ resort_top_right }}</p>
-                    </div>
-                </div>
+            <div style="float: left">
+                {% thumbnail resort_top_right.resortimage_set.first.image "340x130" crop="center" as im %}
+                    <a href="{% url 'resorts:resort-detail' resort_top_right.id %}">
+                        <img data-u="image" src="{{ im.url }}" />
+                    </a>
+                {% endthumbnail %}
             </div>
-            <div>
-                <div class="card h-100">
-                    <div class="card-body">
-                        <img src="{{ resort_bottom_left.resortimage_set.first.image.url }}" alt="">
-                        <p class="card-text">{{ resort_bottom_left }}</p>
-                    </div>
-                </div>
+            <div style="float: left; margin-top: 15px;">
+                {% thumbnail resort_bottom_left.resortimage_set.first.image "340x130" crop="center" as im %}
+                    <a href="{% url 'resorts:resort-detail' resort_bottom_left.id %}">
+                        <img data-u="image" src="{{ im.url }}" />
+                    </a>
+                {% endthumbnail %}
             </div>
         </div>
     </div>
 
     <div class="row offers">
         <div class="col-md-12">
-            <div class="card h-100">
-                <div class="card-body">
-                    <p class="card-text">
-                        <img src="{{ resort_bottom_center.resortimage_set.first.image.url }}" alt="">
-                        {{ resort_bottom_center }}</p>
-                </div>
+            <div style="margin-top: 15px; margin-right: 115px;">
+                {% thumbnail resort_bottom_center.resortimage_set.first.image "830x170" crop="center" as im %}
+                    <a href="{% url 'resorts:resort-detail' resort_bottom_center.id %}">
+                        <img data-u="image" src="{{ im.url }}" />
+                    </a>
+                {% endthumbnail %}
             </div>
 
         </div>
     </div>
 
     <div class="text-center">
-        <h1 class="mt-5">Special Offers</h1>
+        <h1 class="mt-5 mb-5">Special Offers</h1>
     </div>
 
     <div class="row offers">

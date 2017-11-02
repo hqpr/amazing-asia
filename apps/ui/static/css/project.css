@@ -16,13 +16,19 @@ body {
     text-underline: none;
 }
 
+.top_menu button {
+    background: #394854;
+    border-radius: 0;
+    padding: 10px 15px;
+}
+
 .offers {
     text-align: center;
 }
 
-.offers img {
-    width: 100%;
-}
+/*.offers img {*/
+    /*width: 100%;*/
+/*}*/
 
 .socials {
     background: black;
@@ -76,7 +82,7 @@ hr {
 }
 
 .nav-item {
-    margin-right: 10px;
+    margin-right: 25px;
 }
 
 .single_resort {
