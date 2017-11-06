@@ -50,6 +50,7 @@ INSTALLED_APPS = [
     'apps.offers.apps.OffersConfig',
     'apps.enquiry.apps.EnquiryConfig',
     'apps.custom_pages.apps.CustomPagesConfig',
+    'apps.tales.apps.TalesConfig',
 ]
 
 MIDDLEWARE = [

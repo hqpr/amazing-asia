@@ -25,4 +25,5 @@ urlpatterns = [
     url(r'^offers/', include('apps.offers.urls', namespace='offers')),
     url(r'^enquiry/', include('apps.enquiry.urls', namespace='enquiry')),
     url(r'^page/', include('apps.custom_pages.urls', namespace='pages')),
+    url(r'^tales/', include('apps.tales.urls', namespace='tales')),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

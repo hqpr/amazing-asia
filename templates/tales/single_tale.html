@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}{{ page.title }}{% endblock %}
+
+{% block content %}
+  <div class="text-center">
+    <h3>{{ tale.title }}</h3>
+    <p>{{ tale.text|safe }} </p>
+  </div>
+{% endblock %}
