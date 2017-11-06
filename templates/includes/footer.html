@@ -1,55 +1,55 @@
 <!-- Footer -->
 <footer>
-    <div class="socials">
-        <div style="position: relative">
-            <div class="center-block"  style="position: absolute; left: 45%">
-                <i class="fa fa-facebook"></i>
-                <i class="fa fa-twitter"></i>
-                <i class="fa fa-google-plus"></i>
-                <i class="fa fa-pinterest"></i>
-                <i class="fa fa-linkedin"></i>
-            </div>
-        </div>
+  <div class="socials">
+    <div style="position: relative">
+      <div class="center-block"  style="position: absolute; left: 45%">
+        <i class="fa fa-facebook"></i>
+        <i class="fa fa-twitter"></i>
+        <i class="fa fa-google-plus"></i>
+        <i class="fa fa-pinterest"></i>
+        <i class="fa fa-linkedin"></i>
+      </div>
     </div>
+  </div>
 
-    <div class="py-5 bg-dark">
-        <div class="container">
-            <div class="row text-white">
-                <div class="col-lg-3">
-                    <h3>Destinations</h3>
-                    <hr>
-                    <ul class="list-unstyled">
-                        {% for destination in all_destinations %}
-                            <li>
-                                <a href="{% url 'resorts:destination-detail' destination.id %}">{{ destination.name }}</a>
-                            </li>
-                        {% endfor %}
-                    </ul>
-                </div>
-                <div class="col-lg-3">
-                    <h3>Contact Us</h3>
-                    <hr>
-                    <ul class="list-unstyled">
-                        <li>Phone : +960 332-7584</li>
-                        <li>Hotline : +960 773-6564</li>
-                        <li>Email : res@amazingasiatravels.com</li>
-                    </ul>
-                </div>
-                <div class="col-lg-3">
-                    <h3>Important Links</h3>
-                    <hr>
-                    <ul class="list-unstyled">
-                        <li><a href="">Privacy Policy</a></li>
-                        <li><a href="">Send an Enquiry</a></li>
-                        <li><a href="">Contact Us</a></li>
-                    </ul>
-                </div>
-                <div class="col-lg-3">
-                    <h3>Affiliates</h3>
-                    <hr>
-                </div>
-            </div>
+  <div class="py-5 bg-dark">
+    <div class="container">
+      <div class="row text-white">
+        <div class="col-lg-3">
+          <h3>Destinations</h3>
+          <hr>
+          <ul class="list-unstyled">
+            {% for destination in all_destinations %}
+              <li>
+                <a href="{% url 'resorts:destination-detail' destination.id %}">{{ destination.name }}</a>
+              </li>
+            {% endfor %}
+          </ul>
         </div>
-        <!-- /.container -->
+        <div class="col-lg-3">
+          <h3>Contact Us</h3>
+          <hr>
+          <ul class="list-unstyled">
+            <li>Phone : +960 332-7584</li>
+            <li>Hotline : +960 773-6564</li>
+            <li>Email : res@amazingasiatravels.com</li>
+          </ul>
+        </div>
+        <div class="col-lg-3">
+          <h3>Important Links</h3>
+          <hr>
+          <ul class="list-unstyled">
+            {% for page in pages %}
+              <li><a href="{% url 'pages:single_page' page.slug %}">{{ page.title }}</a></li>
+            {% endfor %}
+          </ul>
+        </div>
+        <div class="col-lg-3">
+          <h3>Affiliates</h3>
+          <hr>
+        </div>
+      </div>
     </div>
+    <!-- /.container -->
+  </div>
 </footer>

@@ -22,8 +22,12 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 DEBUG = True
 TEMPLATE_DEBUG = DEBUG
 THUMBNAIL_DEBUG = TEMPLATE_DEBUG
+TINYMCE_DEFAULT_CONFIG = {
+  'file_browser_callback': 'mce_filebrowser'
+}
 
-ALLOWED_HOSTS = []
+
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -37,12 +41,15 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
 
     'gunicorn',
+    'tinymce',
     'sorl.thumbnail',
+    'mce_filebrowser',
 
     'apps.ui.apps.UiConfig',
     'apps.resort.apps.ResortConfig',
     'apps.offers.apps.OffersConfig',
     'apps.enquiry.apps.EnquiryConfig',
+    'apps.custom_pages.apps.CustomPagesConfig',
 ]
 
 MIDDLEWARE = [
@@ -70,6 +77,7 @@ TEMPLATES = [
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
                 'apps.resort.context_processors.get_destinations',
+                'apps.custom_pages.context_processors.bottom_menu',
             ],
         },
     },
