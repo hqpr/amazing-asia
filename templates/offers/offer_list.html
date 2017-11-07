@@ -9,8 +9,8 @@
     <div class="row offer">
       <div class="col-md-3">
         {% if offer.image %}
-          {% thumbnail offer.image "260x235" crop="center" as im %}
-            <img src="{{ im.url }}" />
+          {% thumbnail offer.image "284x267" crop="center" as im %}
+            <img style="margin-right: 5px" src="{{ im.url }}" />
           {% endthumbnail %}
         {% endif %}
       </div>

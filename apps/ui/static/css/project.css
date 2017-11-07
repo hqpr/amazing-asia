@@ -4,6 +4,22 @@ body {
     background: #efefef;
 }
 
+textarea, input, button { outline: none; }
+input:focus {
+    outline-color: transparent;
+    outline-style: none;
+    outline:none;
+    -webkit-appearance: none;
+}
+input {
+    outline: none;
+    border: none !important;
+    -webkit-box-shadow: none !important;
+    -moz-box-shadow: none !important;
+    box-shadow: none !important;
+}
+
+
 .top_menu {
     background: #242e36 !important;
     font-size: 16px;
@@ -234,17 +250,32 @@ a.btn-offer {
 }
 
 /*.btn-offer:hover {*/
-    /*background: transparent;*/
-    /*color: #242e36;*/
-    /*border: 1px solid #242e36;*/
-    /*-webkit-transition: ease 1s;*/
-    /*-moz-transition: ease 1s;*/
-    /*-ms-transition: ease 1s;*/
-    /*-o-transition: ease 1s;*/
-    /*transition: ease 1s;*/
+/*background: transparent;*/
+/*color: #242e36;*/
+/*border: 1px solid #242e36;*/
+/*-webkit-transition: ease 1s;*/
+/*-moz-transition: ease 1s;*/
+/*-ms-transition: ease 1s;*/
+/*-o-transition: ease 1s;*/
+/*transition: ease 1s;*/
 /*}*/
 
 .contact-content {
     background: #dcdcdc;
     border: 1px solid #a8a8a8;
+}
+
+.pagination {
+    float: none;
+    margin: 0px auto;
+}
+
+.pagination li {
+    width: 30px;
+    height: 30px;
+    border: 1px solid black;
+    -webkit-border-radius: 30px;
+    -moz-border-radius: 30px;
+    border-radius: 30px;
+    text-align: center;
 }

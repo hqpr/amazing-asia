@@ -1,12 +1,116 @@
 {% extends 'base_page.html' %}
+{% load static %}
 
-{% block title %} add enquiry {% endblock title %}
+{% block title %} Send Us An Enquiry {% endblock title %}
+
+{% block extra_css %}
+  <link href="{% static 'vendor/bootstrap-datepicker/css/bootstrap-datepicker3.min.css' %}" rel="stylesheet" type="text/css" />
+  <link href="{% static 'vendor/bootstrap-timepicker/css/bootstrap-timepicker.min.css' %}"  rel="stylesheet" type="text/css" />
+  <link href="{% static 'vendor/bootstrap-datetimepicker/css/bootstrap-datetimepicker.min.css' %}"
+{% endblock extra_css %}
 
 {% block content %}
-    <div class="mt-5">
-    <form action="" method="post">
+  <h1 class="text-center mt-5 mb-5">Send Us An Enquiry</h1>
+  <div class="mt-5 contact-content">
+    <div class="col-md-6" style="float: none; margin: 0 auto; padding-bottom: 30px">
+      <form method="post" role="form" action=".">
         {% csrf_token %}
-        {{ form }}
-    </form>
+        {% if form.errors %}
+          <div class="alert alert-alt alert-danger alert-dismissible" role="alert">
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+
+            <p class="control-label">Please check these fields and try again:</p>
+            <ul class="list-unstyled">
+              {% for error in form.errors %}
+                <li class="control-label">{{ error }}</li>
+              {% endfor %}
+            </ul>
+          </div>
+        {% endif %}
+        <h4 class="text-center mb-2 mt-2">Enter your bio details</h4>
+        <div class="form-group">
+          <label class="sr-only" for="inputName">Full Name</label>
+          <input type="text" class="form-control" id="inputFirstName" name="full_name" placeholder="Full Name">
+        </div>
+        <div class="form-group">
+          <label class="sr-only" for="inputEmail">Email</label>
+          <input type="email" class="form-control" id="inputEmail1" name="email" placeholder="Your Email">
+        </div>
+        <div class="form-group">
+          <label class="sr-only" for="inputName">Phone (Optional)</label>
+          <input type="text" class="form-control" id="inputFirstName" name="phone" placeholder="Phone (Optional)">
+        </div>
+        <div class="form-group">
+          <label class="sr-only" for="inputName">Residence (Enter your Nationality)</label>
+          <input type="text" class="form-control" id="inputFirstName" name="residence"
+                 placeholder="Residence (Enter your Nationality)">
+        </div>
+
+        <h4 class="text-center mb-2 mt-2">Enter your booking details</h4>
+        <div class="form-group">
+          <label class="sr-only" for="inputName">Property Name</label>
+          <input type="text" class="form-control" id="inputFirstName" name="property_name" placeholder="Property Name">
+        </div>
+
+        <div class="form-group">
+          <label class="sr-only" for="inputName">Room Type</label>
+          <input type="text" class="form-control" id="inputFirstName" name="room_type" placeholder="Room Type">
+        </div>
+
+        <div class="form-group">
+          <label class="sr-only" for="inputName">Arrival Date</label>
+          {{ form.arrival_date }}
+          {#          <input type="text" class="form-control" id="inputFirstName" name="arrival_date" placeholder="Arrival Date">#}
+        </div>
+
+        <div class="form-group">
+          <label class="sr-only" for="inputName">Number of Nights</label>
+          <input type="number" class="form-control" id="inputFirstName" name="num_of_nights"
+                 placeholder="Number of Nights">
+        </div>
+
+        <h4 class="text-center mb-2 mt-2">Enter your Travel Details</h4>
+
+        <div class="form-group">
+          <label class="sr-only" for="inputName">No. of Adults</label>
+          <input type="number" class="form-control" id="inputFirstName" name="num_adults" placeholder="No. of Adults">
+        </div>
+
+        <div class="form-group">
+          <label class="sr-only" for="inputName">No. of Children (2-11 yrs)</label>
+          <input type="number" class="form-control" id="inputFirstName" name="num_children"
+                 placeholder="No. of Children (2-11 yrs)">
+        </div>
+
+        <div class="form-group">
+          <label class="sr-only" for="inputName">No. of Infants (0-2 yrs)</label>
+          <input type="number" class="form-control" id="inputFirstName" name="num_infants" placeholder="No. of Infants (0-2 yrs)">
+        </div>
+
+      <button type="submit" class="btn btn-danger btn-block">SUBMIT</button>
+
+      </form>
     </div>
+
+  </div>
 {% endblock content %}
+{% block extra_js %}
+  <script src="{% static 'vendor/app.js' %}"></script>
+  <script src="{% static 'vendor/moment.min.js' %}"></script>
+  <script src="{% static 'vendor/bootstrap-daterangepicker/daterangepicker.min.js' %}"></script>
+  <script src="{% static 'vendor/bootstrap-datepicker/js/bootstrap-datepicker.min.js' %}"></script>
+  <script src="{% static 'vendor/bootstrap-timepicker/js/bootstrap-timepicker.min.js' %}"></script>
+  <script src="{% static 'vendor/bootstrap-datetimepicker/js/bootstrap-datetimepicker.min.js' %}"></script>
+  <script>
+    var initPickers = function () {
+        //init date pickers
+        $('.date-picker').datepicker({
+            rtl: App.isRTL(),
+            autoclose: true
+        });
+    };
+    initPickers();
+  </script>
+{% endblock extra_js %}
