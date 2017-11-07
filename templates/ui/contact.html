@@ -1,0 +1,71 @@
+{% extends 'base_page.html' %}
+{% load static %}
+
+{% block title %} Contact Us {% endblock %}
+
+{% block content %}
+  <h1 class="text-center mt-5 mb-2">Contact Us</h1>
+  <h4 class="text-center mb-3">We’ll Send a Reply Your Way In Less Than 24  Hours</h4>
+  <div class="row">
+    <div class="col-md-6">
+      <div class="contact-content">
+        <div class="col-md-8" style="float: none; margin: 0 auto; padding-bottom: 30px">
+
+          <h4 class="text-center mb-2 mt-4">Enter your bio details</h4>
+          <form method="post" role="form" action=".">
+            {% csrf_token %}
+            {% if form.errors %}
+              <div class="alert alert-alt alert-danger alert-dismissible" role="alert">
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+
+                <p class="control-label">Please check these fields and try again:</p>
+                <ul class="list-unstyled">
+                  {% for error in form.errors %}
+                    <li class="control-label">{{ error }}</li>
+                  {% endfor %}
+                </ul>
+              </div>
+            {% endif %}
+            <div class="form-group">
+              <label class="sr-only" for="inputName">Full Name</label>
+              <input type="text" class="form-control" id="inputFirstName" name="full_name" placeholder="Full Name">
+            </div>
+            <div class="form-group">
+              <label class="sr-only" for="inputEmail">Email</label>
+              <input type="email" class="form-control" id="inputEmail1" name="email" placeholder="Your Email">
+            </div>
+            <div class="form-group">
+              <label class="sr-only" for="inputName">Phone (Optional)</label>
+              <input type="text" class="form-control" id="inputFirstName" name="phone" placeholder="Phone (Optional)">
+            </div>
+            <div class="form-group">
+              <label class="sr-only" for="inputName">Residence (Enter your Nationality)</label>
+              <input type="text" class="form-control" id="inputFirstName" name="residence"
+                     placeholder="Residence (Enter your Nationality)">
+            </div>
+            <h4 class="text-center mb-2 mt-4">What’s your message</h4>
+            <div class="form-group">
+              <label class="sr-only" for="inputEmail">Message</label>
+              <textarea class="maxlength-textarea form-control" data-plugin="maxlength" data-placement="bottom-right-inside" maxlength="500" rows="3" placeholder="Enter your message here..." name="body"></textarea>
+            </div>
+            <button type="submit" class="btn btn-danger btn-block">Submit</button>
+          </form>
+        </div>
+
+
+      </div>
+    </div>
+    <div class="col-md-6">
+      <img class="img-responsive mb-1" src="{% static 'img/contact-us.jpg' %}" alt="">
+      <p>P.O. Box: 20265, <br>
+        H.Handhuvarudheyge, <br>
+        Henveyru, Male, <br>
+        Republic of Maldives
+      </p>
+      <b>Phone:</b> +960 3327584 <br>
+      <b>Email:</b> info(at)amazingasiatravels(dot)com
+    </div>
+  </div>
+{% endblock content %}

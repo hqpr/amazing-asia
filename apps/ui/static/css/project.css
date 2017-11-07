@@ -1,6 +1,7 @@
 body {
     font-family: 'Open Sans Condensed', sans-serif;
     letter-spacing: 1px;
+    background: #efefef;
 }
 
 .top_menu {
@@ -155,6 +156,8 @@ hr {
 
 .offer_content {
     border-left: 1px solid #cfcfcf;
+    padding-bottom: 46px;
+    background: white;
 }
 
 .offer_content a {
@@ -181,8 +184,39 @@ hr {
     margin-left: 0;
 }
 
-.page_content .btn-danger {
+.btn-danger {
     border-radius: 0;
     background: #b03232;
     padding: 15px;
+}
+
+.btn-offer {
+    color: #cfcfcf;
+    border-radius: 0;
+    background: #242e36;
+    padding: 15px;
+    cursor: pointer;
+    position: absolute;
+    right: 0;
+    padding: 10px 30px;
+}
+
+a.btn-offer {
+    color: #cfcfcf ;
+}
+
+/*.btn-offer:hover {*/
+    /*background: transparent;*/
+    /*color: #242e36;*/
+    /*border: 1px solid #242e36;*/
+    /*-webkit-transition: ease 1s;*/
+    /*-moz-transition: ease 1s;*/
+    /*-ms-transition: ease 1s;*/
+    /*-o-transition: ease 1s;*/
+    /*transition: ease 1s;*/
+/*}*/
+
+.contact-content {
+    background: #dcdcdc;
+    border: 1px solid #a8a8a8;
 }

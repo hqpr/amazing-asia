@@ -1,6 +1,8 @@
+from django.shortcuts import redirect, render
 from django.views.generic import TemplateView
 
 from apps.resort.models import Resort
+from .forms import ContactForm
 
 
 class IndexView(TemplateView):
@@ -14,3 +16,18 @@ class IndexView(TemplateView):
         context['resort_bottom_center'] = Resort.objects.featured(3)
         return context
 
+
+def contact(request):
+    if request.method == 'POST':
+        context = {}
+        feedback_form = ContactForm(request.POST)
+        context["form"] = feedback_form
+        if feedback_form.is_valid():
+            feedback_form.save()
+            response = redirect('ui:index')
+            response['Location'] += '?message_sent=success'
+            return response
+        else:
+            return render(request, 'ui/contact.html', context)
+    else:
+        return render(request, 'ui/contact.html')
