@@ -38,6 +38,12 @@ input {
     background: #394854;
     border-radius: 0;
     padding: 10px 15px;
+    padding-left: 20px;
+    letter-spacing: 2px;
+}
+
+.dropdown-item:active {
+    background: #394854;
 }
 
 .offers {
@@ -288,11 +294,22 @@ a.btn-offer {
 }
 
 .pagination li {
-    width: 30px;
-    height: 30px;
+    width: 27px;
+    height: 27px;
     border: 1px solid black;
-    -webkit-border-radius: 30px;
-    -moz-border-radius: 30px;
-    border-radius: 30px;
+    -webkit-border-radius: 25px;
+    -moz-border-radius: 25px;
+    border-radius: 25px;
     text-align: center;
+    margin-left: 15px;
+    font-size: 18px;
+}
+
+.pagination a {
+    color: black;
+}
+
+.pagination li.active {
+    background: black;
+    color: white;
 }

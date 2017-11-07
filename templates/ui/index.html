@@ -24,7 +24,7 @@
           <img class="img-responsive" style="width: 100%; max-height: 150px"
                src="{{ resort_top_right.resortimage_set.first.image.url }}" alt="">
       {% else %}
-          <div class="featured_products" style="min-height: 150px; line-height: 150px">
+          <div class="featured_products" style="min-height: 130px; line-height: 150px">
             <a href="{% url 'resorts:resort-detail' resort_top_right.id %}">{{ resort_top_right }}</a>
           </div>
       {% endif %}
@@ -34,7 +34,7 @@
           <img class="img-responsive" style="width: 100%; max-height: 150px"
                src="{{ resort_bottom_left.resortimage_set.first.image.url }}" alt="">
       {% else %}
-          <div class="featured_products" style="min-height: 150px; line-height: 150px">
+          <div class="featured_products" style="min-height: 130px; line-height: 150px">
             <a href="{% url 'resorts:resort-detail' resort_bottom_left.id %}">{{ resort_bottom_left }}</a>
           </div>
       {% endif %}
@@ -48,7 +48,7 @@
         <img class="img-responsive" style="width: 100%; max-height: 150px"
              src="{{ resort_bottom_center.resortimage_set.first.image.url }}" alt="">
       {% else %}
-          <div class="featured_products" style="min-height: 300px; line-height: 300px">
+          <div class="featured_products" style="min-height: 170px; line-height: 170px">
             <a href="{% url 'resorts:resort-detail' resort_bottom_center.id %}">{{ resort_bottom_center }}</a>
           </div>
       {% endif %}
@@ -76,7 +76,7 @@
           <img class="img-responsive" style="width: 100%; max-height: 150px"
                src="{{ offer_top_right.image.url }}" alt="">
         {% else %}
-          <div class="featured_products" style="min-height: 150px; line-height: 150px">
+          <div class="featured_products" style="min-height: 130px; line-height: 150px">
             <a href="{% url 'offers:detail' offer_top_right.id %}">{{ offer_top_right }}</a>
           </div>
         {% endif %}
@@ -86,7 +86,7 @@
           <img class="img-responsive" style="width: 100%; max-height: 150px"
                src="{{ offer_bottom_left.image.url }}" alt="">
         {% else %}
-          <div class="featured_products" style="min-height: 150px; line-height: 150px">
+          <div class="featured_products" style="min-height: 130px; line-height: 150px">
             <a href="{% url 'offers:detail' offer_bottom_left.id %}">{{ offer_bottom_left }}</a>
           </div>
         {% endif %}
@@ -100,7 +100,7 @@
         <img class="img-responsive" style="width: 100%; max-height: 150px"
              src="{{ offer_bottom_center.image.url }}" alt="">
       {% else %}
-        <div class="featured_products" style="min-height: 300px; line-height: 300px">
+        <div class="featured_products" style="min-height: 170px; line-height: 170px">
           <a href="{% url 'offers:detail' offer_bottom_center.id %}">{{ offer_bottom_center }}</a>
         </div>
       {% endif %}
