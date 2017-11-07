@@ -1,6 +1,18 @@
 from django.db import models
 
 
+class OfferManager(models.Manager):
+
+    def featured(self, position):
+        try:
+            return self.get(is_featured=True, featured_position=position)
+        except Offer.DoesNotExist:
+            if self.filter(is_active=True).count() > 4:
+                return Offer.objects.order_by('?').first()
+            else:
+                return None
+
+
 class Offer(models.Model):
 
     POSITION_CHOICES = (
@@ -19,6 +31,8 @@ class Offer(models.Model):
     is_active = models.BooleanField(default=False)
     is_featured = models.BooleanField(default=False)
     featured_position = models.IntegerField(choices=POSITION_CHOICES, blank=True, null=True)
+
+    objects = OfferManager()
 
     def __str__(self):
         return "%s" % self.name

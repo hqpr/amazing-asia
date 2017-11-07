@@ -2,6 +2,7 @@ from django.shortcuts import redirect, render
 from django.views.generic import TemplateView
 
 from apps.resort.models import Resort
+from apps.offers.models import Offer
 from .forms import ContactForm
 
 
@@ -14,6 +15,12 @@ class IndexView(TemplateView):
         context['resort_top_right'] = Resort.objects.featured(1)
         context['resort_bottom_left'] = Resort.objects.featured(2)
         context['resort_bottom_center'] = Resort.objects.featured(3)
+
+        context['offer_top_left'] = Offer.objects.featured(0)
+        context['offer_top_right'] = Offer.objects.featured(1)
+        context['offer_bottom_left'] = Offer.objects.featured(2)
+        context['offer_bottom_center'] = Offer.objects.featured(3)
+
         return context
 
 
