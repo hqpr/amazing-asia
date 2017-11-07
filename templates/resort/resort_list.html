@@ -4,47 +4,52 @@
 {% block title %} {{ object.name }} {% endblock %}
 
 {% block content %}
-    <h1 class="text-center mt-5 mb-5">{{ object.name }} Destinations</h1>
-    <div class="row">
-        {% for resort in object_list %}
+  <h1 class="text-center mt-5 mb-5">{{ object.name }} Destinations</h1>
+  <div class="row">
+    {% for resort in object_list %}
 
-            <div class="col-lg-4 single_resort">
-                {% if resort.resortimage_set.all %}
-                    {% thumbnail resort.resortimage_set.first "345x345" crop="center" as im %}
-                        <img src="{{ im.url }}" />
-                    {% endthumbnail %}
-                {% endif %}
-                <br>
-                <div class="text-center text_content">
-                    <b><a href="{% url 'resorts:resort-detail' resort.id %}">{{ resort.name }}</a></b>
-                    <p>BAA ATOLL / 25 minutes transfer</p>
-                </div>
-            </div>
+      <div class="col-lg-4 single_resort">
+        {% if resort.resortimage_set.all %}
+          {% thumbnail resort.resortimage_set.first "345x345" crop="center" as im %}
+            <a href="{% url 'resorts:resort-detail' resort.id %}"><img src="{{ im.url }}" /></a>
+          {% endthumbnail %}
+        {% endif %}
+        <br>
+        <div class="text-center text_content">
+          <b><a href="{% url 'resorts:resort-detail' resort.id %}">{{ resort.name }}</a></b>
+          <p>BAA ATOLL / 25 minutes transfer</p>
+        </div>
+        <div class="text-center hover_text_content">
+          <a href="{% url 'resorts:resort-detail' resort.id %}"><b>{{ resort.name }}</b>
+          <p>BAA ATOLL / 25 minutes transfer</p>
+          </a>
+        </div>
+      </div>
 
-        {% endfor %}
-    </div>
-    <div class="row">
+    {% endfor %}
+  </div>
+  <div class="row">
 
     {% if is_paginated %}
-        <ul class="pagination">
-            {% if page_obj.has_previous %}
-                <li><a href="?page={{ page_obj.previous_page_number }}">&laquo;</a></li>
-            {% else %}
-                <li class="disabled"><span>&laquo;</span></li>
-            {% endif %}
-            {% for i in page_obj.paginator.page_range %}
-                {% if page_obj.number == i %}
-                    <li class="active"><span>{{ i }} <span class="sr-only">(current)</span></span></li>
-                {% else %}
-                    <li><a href="?page={{ i }}">{{ i }}</a></li>
-                {% endif %}
-            {% endfor %}
-            {% if page_obj.has_next %}
-                <li><a href="?page={{ page_obj.next_page_number }}">&raquo;</a></li>
-            {% else %}
-                <li class="disabled"><span>&raquo;</span></li>
-            {% endif %}
-        </ul>
+      <ul class="pagination">
+        {% if page_obj.has_previous %}
+          <li><a href="?page={{ page_obj.previous_page_number }}">&laquo;</a></li>
+        {% else %}
+          <li class="disabled"><span>&laquo;</span></li>
+        {% endif %}
+        {% for i in page_obj.paginator.page_range %}
+          {% if page_obj.number == i %}
+            <li class="active"><span>{{ i }} <span class="sr-only">(current)</span></span></li>
+          {% else %}
+            <li><a href="?page={{ i }}">{{ i }}</a></li>
+          {% endif %}
+        {% endfor %}
+        {% if page_obj.has_next %}
+          <li><a href="?page={{ page_obj.next_page_number }}">&raquo;</a></li>
+        {% else %}
+          <li class="disabled"><span>&raquo;</span></li>
+        {% endif %}
+      </ul>
     {% endif %}
-    </div>
+  </div>
 {% endblock %}

@@ -11,20 +11,24 @@ class ContactForm(forms.ModelForm):
 
     def save(self):
         contact = Contact(
-            first_name=self.cleaned_data['first_name'],
-            email=self.cleaned_data['email1'],
-            body=self.cleaned_data['body']
+            full_name=self.cleaned_data['full_name'],
+            email=self.cleaned_data['email'],
+            body=self.cleaned_data['body'],
+            phone=self.cleaned_data['phone'],
+            residence=self.cleaned_data['residence'],
         )
         cont = contact.save()
 
-        body = 'From: {}\n Name: {}\n Body: {}'.format(self.cleaned_data['email1'],
-                                                       self.cleaned_data['first_name'],
+        body = 'From: {}\n Name: {}\n Body: {}'.format(self.cleaned_data['email'],
+                                                       self.cleaned_data['full_name'],
+                                                       self.cleaned_data['phone'],
+                                                       self.cleaned_data['residence'],
                                                        self.cleaned_data['body'])
 
         email = EmailMessage(
             'Contact Form',
             body,
-            self.cleaned_data['email1'],
+            self.cleaned_data['email'],
             ['contact@mygunlab.com', ],
             ['adubnyak@gmail.com', 'mygunlab@gmail.com'],
             reply_to=['mygunlab@gmail.com'],

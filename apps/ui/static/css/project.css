@@ -86,21 +86,49 @@ hr {
 .single_resort {
     margin-bottom: 55px;
     color: #282828;
+    cursor: pointer;
 }
 
 .text_content {
-    margin-top: 10px;
+    font-size: 18px;
+    color: black;
+}
+
+.text_content a {
+    color: black;
+}
+
+.text_content a:hover {
+    color: #d0d0d0;
+    text-decoration: none;
 }
 
 .text_content:hover {
+    width: 99%;
     background: #282828;
     color: #d0d0d0;
 }
 
-.single_resort:hover {
-    /*background: #282828;*/
-    /*color: #d0d0d0;*/
-    /*cursor: pointer;*/
+.hover_text_content a {
+    color: #d0d0d0;
+    text-decoration: none;
+}
+
+.hover_text_content {
+    display: none;
+    background: #282828;
+    width: 99%;
+}
+
+.hover_text_content b {
+    font-size: 18px;
+}
+
+.single_resort:hover .hover_text_content{
+    display: block;
+}
+.single_resort:hover .text_content{
+    display: none;
 }
 
 .page_menu{
