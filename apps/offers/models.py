@@ -23,6 +23,7 @@ class Offer(models.Model):
     )
 
     name = models.CharField(max_length=255)
+    offer_text = models.CharField(max_length=255, null=True, blank=True)
     description = models.TextField(blank=True, null=True)
     expires_at = models.DateField(blank=True, null=True)
     stays_from = models.DateField(blank=True, null=True)
