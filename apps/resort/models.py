@@ -53,6 +53,7 @@ class Resort(models.Model):
     is_featured = models.BooleanField(default=False)
     featured_position = models.IntegerField(choices=POSITION_CHOICES, blank=True, null=True)
     location = models.CharField(max_length=255, null=True, blank=True)
+    transfer_time = models.IntegerField(null=True, blank=True, help_text='eg: 25 minutes')
 
     objects = ResortManager()
 

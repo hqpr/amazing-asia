@@ -8,14 +8,14 @@
     <h1 class="mt-5 mb-5">Featured Resorts</h1>
   </div>
   <div class="row offers">
-    <div class="col-md-6">
+    <div class="col-md-6 first_home_picture">
       {% if resort_top_left.resortimage_set.all %}
         <img class="img-responsive" style="width: 100%; height: 100%"
              src="{{ resort_top_left.resortimage_set.first.image.url }}" alt="">
       {% else %}
-          <div class="featured_products" style="min-height: 300px; line-height: 300px">
-            <a href="{% url 'resorts:resort-detail' resort_top_left.id %}">{{ resort_top_left }}</a>
-          </div>
+        <div class="featured_products" style="min-height: 300px; line-height: 300px">
+          <a href="{% url 'resorts:resort-detail' resort_top_left.id %}">{{ resort_top_left }}</a>
+        </div>
       {% endif %}
     </div>
     <div class="col-md-6">
@@ -23,21 +23,21 @@
         {% if resort_top_right.resortimage_set.all %}
           <img class="img-responsive" style="width: 100%; max-height: 150px"
                src="{{ resort_top_right.resortimage_set.first.image.url }}" alt="">
-      {% else %}
+        {% else %}
           <div class="featured_products" style="min-height: 130px; line-height: 150px">
             <a href="{% url 'resorts:resort-detail' resort_top_right.id %}">{{ resort_top_right }}</a>
           </div>
-      {% endif %}
+        {% endif %}
       </div>
       <div>
         {% if resort_bottom_left.resortimage_set.all %}
           <img class="img-responsive" style="width: 100%; max-height: 150px"
                src="{{ resort_bottom_left.resortimage_set.first.image.url }}" alt="">
-      {% else %}
+        {% else %}
           <div class="featured_products" style="min-height: 130px; line-height: 150px">
             <a href="{% url 'resorts:resort-detail' resort_bottom_left.id %}">{{ resort_bottom_left }}</a>
           </div>
-      {% endif %}
+        {% endif %}
       </div>
     </div>
   </div>
@@ -48,9 +48,9 @@
         <img class="img-responsive" style="width: 100%; max-height: 150px"
              src="{{ resort_bottom_center.resortimage_set.first.image.url }}" alt="">
       {% else %}
-          <div class="featured_products" style="min-height: 170px; line-height: 170px">
-            <a href="{% url 'resorts:resort-detail' resort_bottom_center.id %}">{{ resort_bottom_center }}</a>
-          </div>
+        <div class="featured_products" style="min-height: 170px; line-height: 170px">
+          <a href="{% url 'resorts:resort-detail' resort_bottom_center.id %}">{{ resort_bottom_center }}</a>
+        </div>
       {% endif %}
     </div>
   </div>
@@ -60,7 +60,7 @@
   </div>
 
   <div class="row offers">
-    <div class="col-md-6">
+    <div class="col-md-6 first_home_picture">
       {% if offer_top_left.image %}
         <img class="img-responsive" style="width: 100%; height: 100%"
              src="{{ offer_top_left.image.url }}" alt="">

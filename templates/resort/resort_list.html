@@ -17,11 +17,13 @@
         <br>
         <div class="text-center text_content">
           <b><a href="{% url 'resorts:resort-detail' resort.id %}">{{ resort.name }}</a></b>
-          <p>BAA ATOLL / 25 minutes transfer</p>
+          <p>{{ resort.location|default:"" }}
+            {% if resort.transfer_time %} / {{ resort.transfer_time }} minutes transfer {% endif %}</p>
         </div>
         <div class="text-center hover_text_content">
           <a href="{% url 'resorts:resort-detail' resort.id %}"><b>{{ resort.name }}</b>
-          <p>BAA ATOLL / 25 minutes transfer</p>
+          <p>{{ resort.location|default:"" }}
+            {% if resort.transfer_time %} / {{ resort.transfer_time }} minutes transfer {% endif %}</p>
           </a>
         </div>
       </div>

@@ -4,7 +4,7 @@
 {% block title %} {{ object.name }}{% endblock %}
 
 {% block page_name %}
-  <p>{{ object.location|default:"" }}</p>
+  <p class="small">{{ object.location|default:"" }}</p>
   <h3>{{ object.name }}</h3>
 {% endblock page_name %}
 
@@ -34,6 +34,23 @@
               <a data-toggle="tab" href="#Photos" aria-controls="Photos"
                  role="tab">Photos</a>
             </li>
+
+{#            <li class="dropdown visible-xs" role="presentation">#}
+{#              <a class="dropdown-toggle" data-toggle="dropdown" href="#" aria-expanded="false">#}
+{#                <span class="caret"></span>Menu </a>#}
+{#              <ul class="dropdown-menu" role="menu">#}
+{#                <li class="active" role="presentation">#}
+{#                  <a data-toggle="tab" href="#Villas" aria-controls="Villas"#}
+{#                                                          role="tab">Villas</a></li>#}
+{#                <li role="presentation"><a data-toggle="tab" href="#Wines" aria-controls="Wines"#}
+{#                                           role="tab">Wines</a></li>#}
+{#                <li role="presentation"><a data-toggle="tab" href="#Wells" aria-controls="Wells"#}
+{#                                           role="tab">Wells</a></li>#}
+{#                <li role="presentation"><a data-toggle="tab" href="#Exp" aria-controls="Exp"#}
+{#                                           role="tab">EXPERIENCE</a></li>#}
+{#              </ul>#}
+{#            </li>#}
+
           </ul>
         </div>
       </div>
@@ -48,155 +65,155 @@
       <div class="tab-content padding-top-20">
         <div class="tab-pane active" id="Villas" role="tabpanel">
 
-        {% for villa in object.villasuite_set.all %}
-          {% if villa.villasuiteimage_set.all %}
-            <div id="carouselVillaIndicators" class="carousel slide" data-ride="carousel">
-              <div class="carousel-inner" role="listbox">
-                <div class="carousel-item active"
-                     style="background-image: url('{{ villa.villasuiteimage_set.first.image.url }}')">
-                </div>
-                {% for im in villa.villasuiteimage_set.all %}
-                  <div class="carousel-item" style="background-image: url('{{ im.image.url }}')">
+          {% for villa in object.villasuite_set.all %}
+            {% if villa.villasuiteimage_set.all %}
+              <div id="carouselVillaIndicators" class="carousel slide" data-ride="carousel">
+                <div class="carousel-inner" role="listbox">
+                  <div class="carousel-item active"
+                       style="background-image: url('{{ villa.villasuiteimage_set.first.image.url }}')">
                   </div>
-                {% endfor %}
+                  {% for im in villa.villasuiteimage_set.all %}
+                    <div class="carousel-item" style="background-image: url('{{ im.image.url }}')">
+                    </div>
+                  {% endfor %}
+                </div>
+                <a class="carousel-control-prev" href="#carouselVillaIndicators" role="button" data-slide="prev">
+                  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                  <span class="sr-only">Previous</span>
+                </a>
+                <a class="carousel-control-next" href="#carouselVillaIndicators" role="button" data-slide="next">
+                  <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                  <span class="sr-only">Next</span>
+                </a>
               </div>
-              <a class="carousel-control-prev" href="#carouselVillaIndicators" role="button" data-slide="prev">
-                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                <span class="sr-only">Previous</span>
-              </a>
-              <a class="carousel-control-next" href="#carouselVillaIndicators" role="button" data-slide="next">
-                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                <span class="sr-only">Next</span>
-              </a>
-            </div>
-          {% endif %}
+            {% endif %}
 
-          <h1>{{ villa.name }}</h1>
-          <p><b>VILLA VIEW: </b> {{ villa.villa_view }}</p>
-          <p><b>OCCUPANCY: </b> {{ villa.max_occupancy }} PERSONS</p>
-          <p>{{ villa.description }}</p>
-          <div class="mb-5"></div>
-        {% endfor %}
+            <h1>{{ villa.name }}</h1>
+            <p><b>VILLA VIEW: </b> {{ villa.villa_view }}</p>
+            <p><b>OCCUPANCY: </b> {{ villa.max_occupancy }} PERSONS</p>
+            <p>{{ villa.description }}</p>
+            <div class="mb-5"></div>
+          {% endfor %}
 
         </div>
         <div class="tab-pane" id="Wines" role="tabpanel">
-        {% for wine in object.winedine_set.all %}
-          {% if wine.winedineimage_set.all %}
-            <div id="carouselWineIndicators" class="carousel slide" data-ride="carousel">
-              <div class="carousel-inner" role="listbox">
-                <div class="carousel-item active"
-                     style="background-image: url('{{ wine.winedineimage_set.first.image.url }}')">
-                </div>
-                {% for im in wine.winedineimage_set.all %}
-                  <div class="carousel-item" style="background-image: url('{{ im.image.url }}')">
+          {% for wine in object.winedine_set.all %}
+            {% if wine.winedineimage_set.all %}
+              <div id="carouselWineIndicators" class="carousel slide" data-ride="carousel">
+                <div class="carousel-inner" role="listbox">
+                  <div class="carousel-item active"
+                       style="background-image: url('{{ wine.winedineimage_set.first.image.url }}')">
                   </div>
-                {% endfor %}
+                  {% for im in wine.winedineimage_set.all %}
+                    <div class="carousel-item" style="background-image: url('{{ im.image.url }}')">
+                    </div>
+                  {% endfor %}
+                </div>
+                <a class="carousel-control-prev" href="#carouselWineIndicators" role="button" data-slide="prev">
+                  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                  <span class="sr-only">Previous</span>
+                </a>
+                <a class="carousel-control-next" href="#carouselWineIndicators" role="button" data-slide="next">
+                  <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                  <span class="sr-only">Next</span>
+                </a>
               </div>
-              <a class="carousel-control-prev" href="#carouselWineIndicators" role="button" data-slide="prev">
-                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                <span class="sr-only">Previous</span>
-              </a>
-              <a class="carousel-control-next" href="#carouselWineIndicators" role="button" data-slide="next">
-                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                <span class="sr-only">Next</span>
-              </a>
-            </div>
-          {% endif %}
+            {% endif %}
 
-          <h1>{{ wine.name }}</h1>
-          <p><b>VILLA VIEW: </b> {{ wine.villa_view }}</p>
-          <p><b>OCCUPANCY: </b> {{ wine.max_occupancy }} PERSONS</p>
-          <p>{{ wine.description }}</p>
-          <div class="mb-5"></div>
-        {% endfor %}
+            <h1>{{ wine.name }}</h1>
+            <p><b>VILLA VIEW: </b> {{ wine.villa_view }}</p>
+            <p><b>OCCUPANCY: </b> {{ wine.max_occupancy }} PERSONS</p>
+            <p>{{ wine.description }}</p>
+            <div class="mb-5"></div>
+          {% endfor %}
         </div>
         <div class="tab-pane" id="Wells" role="tabpanel">
-        {% for well in object.wellness_set.all %}
-          {% if well.wellnessimage_set.all %}
-            <div id="carouselWellIndicators" class="carousel slide" data-ride="carousel">
-              <div class="carousel-inner" role="listbox">
-                <div class="carousel-item active"
-                     style="background-image: url('{{ well.wellnessimage_set.first.image.url }}')">
-                </div>
-                {% for im in well.wellnessimage_set.all %}
-                  <div class="carousel-item" style="background-image: url('{{ im.image.url }}')">
+          {% for well in object.wellness_set.all %}
+            {% if well.wellnessimage_set.all %}
+              <div id="carouselWellIndicators" class="carousel slide" data-ride="carousel">
+                <div class="carousel-inner" role="listbox">
+                  <div class="carousel-item active"
+                       style="background-image: url('{{ well.wellnessimage_set.first.image.url }}')">
                   </div>
-                {% endfor %}
+                  {% for im in well.wellnessimage_set.all %}
+                    <div class="carousel-item" style="background-image: url('{{ im.image.url }}')">
+                    </div>
+                  {% endfor %}
+                </div>
+                <a class="carousel-control-prev" href="#carouselWellIndicators" role="button" data-slide="prev">
+                  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                  <span class="sr-only">Previous</span>
+                </a>
+                <a class="carousel-control-next" href="#carouselWellIndicators" role="button" data-slide="next">
+                  <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                  <span class="sr-only">Next</span>
+                </a>
               </div>
-              <a class="carousel-control-prev" href="#carouselWellIndicators" role="button" data-slide="prev">
-                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                <span class="sr-only">Previous</span>
-              </a>
-              <a class="carousel-control-next" href="#carouselWellIndicators" role="button" data-slide="next">
-                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                <span class="sr-only">Next</span>
-              </a>
-            </div>
-          {% endif %}
+            {% endif %}
 
-          <h1>{{ well.name }}</h1>
-          <p><b>VILLA VIEW: </b> {{ well.villa_view }}</p>
-          <p><b>OCCUPANCY: </b> {{ well.max_occupancy }} PERSONS</p>
-          <p>{{ well.description }}</p>
-          <div class="mb-5"></div>
-        {% endfor %}
+            <h1>{{ well.name }}</h1>
+            <p><b>VILLA VIEW: </b> {{ well.villa_view }}</p>
+            <p><b>OCCUPANCY: </b> {{ well.max_occupancy }} PERSONS</p>
+            <p>{{ well.description }}</p>
+            <div class="mb-5"></div>
+          {% endfor %}
         </div>
         <div class="tab-pane" id="Exp" role="tabpanel">
-        {% for exp in object.experience_set.all %}
-          {% if exp.experienceimage_set.all %}
-            <div id="carouselExpIndicators" class="carousel slide" data-ride="carousel">
-              <div class="carousel-inner" role="listbox">
-                <div class="carousel-item active"
-                     style="background-image: url('{{ exp.experienceimage_set.first.image.url }}')">
-                </div>
-                {% for im in exp.experienceimage_set.all %}
-                  <div class="carousel-item" style="background-image: url('{{ im.image.url }}')">
+          {% for exp in object.experience_set.all %}
+            {% if exp.experienceimage_set.all %}
+              <div id="carouselExpIndicators" class="carousel slide" data-ride="carousel">
+                <div class="carousel-inner" role="listbox">
+                  <div class="carousel-item active"
+                       style="background-image: url('{{ exp.experienceimage_set.first.image.url }}')">
                   </div>
-                {% endfor %}
+                  {% for im in exp.experienceimage_set.all %}
+                    <div class="carousel-item" style="background-image: url('{{ im.image.url }}')">
+                    </div>
+                  {% endfor %}
+                </div>
+                <a class="carousel-control-prev" href="#carouselExpIndicators" role="button" data-slide="prev">
+                  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                  <span class="sr-only">Previous</span>
+                </a>
+                <a class="carousel-control-next" href="#carouselExpIndicators" role="button" data-slide="next">
+                  <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                  <span class="sr-only">Next</span>
+                </a>
               </div>
-              <a class="carousel-control-prev" href="#carouselExpIndicators" role="button" data-slide="prev">
-                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                <span class="sr-only">Previous</span>
-              </a>
-              <a class="carousel-control-next" href="#carouselExpIndicators" role="button" data-slide="next">
-                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                <span class="sr-only">Next</span>
-              </a>
-            </div>
-          {% endif %}
+            {% endif %}
 
-          <h1>{{ exp.name }}</h1>
-          <p><b>VILLA VIEW: </b> {{ exp.villa_view }}</p>
-          <p><b>OCCUPANCY: </b> {{ exp.max_occupancy }} PERSONS</p>
-          <p>{{ exp.description }}</p>
-          <div class="mb-5"></div>
-        {% endfor %}
+            <h1>{{ exp.name }}</h1>
+            <p><b>VILLA VIEW: </b> {{ exp.villa_view }}</p>
+            <p><b>OCCUPANCY: </b> {{ exp.max_occupancy }} PERSONS</p>
+            <p>{{ exp.description }}</p>
+            <div class="mb-5"></div>
+          {% endfor %}
         </div>
         <div class="tab-pane" id="Photos" role="tabpanel">
-        {% for resort in object.resortimage_set.all %}
-          {% if resort.resortimage_set.all %}
-            <div id="carouselResortIndicators" class="carousel slide" data-ride="carousel">
-              <div class="carousel-inner" role="listbox">
-                <div class="carousel-item active"
-                     style="background-image: url('{{ resort.resortimage_set.first.image.url }}')">
-                </div>
-                {% for im in resort.resortimage_set.all %}
-                  <div class="carousel-item" style="background-image: url('{{ im.image.url }}')">
+          {% for resort in object.resortimage_set.all %}
+            {% if resort.resortimage_set.all %}
+              <div id="carouselResortIndicators" class="carousel slide" data-ride="carousel">
+                <div class="carousel-inner" role="listbox">
+                  <div class="carousel-item active"
+                       style="background-image: url('{{ resort.resortimage_set.first.image.url }}')">
                   </div>
-                {% endfor %}
+                  {% for im in resort.resortimage_set.all %}
+                    <div class="carousel-item" style="background-image: url('{{ im.image.url }}')">
+                    </div>
+                  {% endfor %}
+                </div>
+                <a class="carousel-control-prev" href="#carouselResortIndicators" role="button" data-slide="prev">
+                  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                  <span class="sr-only">Previous</span>
+                </a>
+                <a class="carousel-control-next" href="#carouselResortIndicators" role="button" data-slide="next">
+                  <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                  <span class="sr-only">Next</span>
+                </a>
               </div>
-              <a class="carousel-control-prev" href="#carouselResortIndicators" role="button" data-slide="prev">
-                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                <span class="sr-only">Previous</span>
-              </a>
-              <a class="carousel-control-next" href="#carouselResortIndicators" role="button" data-slide="next">
-                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                <span class="sr-only">Next</span>
-              </a>
-            </div>
-          {% endif %}
-          <div class="mb-5"></div>
-        {% endfor %}
+            {% endif %}
+            <div class="mb-5"></div>
+          {% endfor %}
         </div>
       </div>
 

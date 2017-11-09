@@ -6,7 +6,7 @@
 {% block content %}
     <div class="text-center mt-5">
         <h1>{{ object.name }}</h1>
-        <h4>{{ object.offer_text }}</h4>
+        <h4>{{ object.offer_text|default:"" }}</h4>
     </div>
     <div class="row page_content">
         <div class="col-md-6 mb-5">
