@@ -10,5 +10,6 @@ class EnquiryForm(forms.ModelForm):
                   'num_of_nights', 'num_adults', 'num_children', 'num_infants']
 
         widgets = {
-            'arrival_date': forms.TextInput(attrs={'class': 'form-control date-picker', 'placeholder': 'Arrival Date'}),
+            'arrival_date': forms.TextInput(attrs={'class': 'form-control date-picker', 'placeholder': 'Arrival Date',
+                                                   'data-provide': 'datepicker'}),
         }

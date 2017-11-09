@@ -4,6 +4,10 @@ from .models import (Destination, Resort, ResortImage, VillaSuite, VillaSuiteIma
                      Wellness, WellnessImage, Experience, ExperienceImage)
 
 
+class ResortImageAdmin(admin.ModelAdmin):
+    list_display = ('image', 'resort')
+
+
 class ResortImageInline(admin.StackedInline):
     model = ResortImage
     extra = 1
@@ -50,7 +54,7 @@ class ExperienceImageInline(admin.StackedInline):
 
 
 class ResortAdmin(admin.ModelAdmin):
-    list_display = ('name', 'is_active', 'is_featured')
+    list_display = ('name', 'destination', 'is_active', 'is_featured')
 
     inlines = [
         ResortImageInline,
@@ -79,7 +83,7 @@ class ExperienceAdmin(admin.ModelAdmin):
 
 admin.site.register(Destination)
 admin.site.register(Resort, ResortAdmin)
-admin.site.register(ResortImage)
+admin.site.register(ResortImage, ResortImageAdmin)
 admin.site.register(VillaSuite, VillaSuiteAdmin)
 admin.site.register(WineDine, WineDineAdmin)
 admin.site.register(Wellness, WellnessAdmin)

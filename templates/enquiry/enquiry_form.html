@@ -4,9 +4,16 @@
 {% block title %} Send Us An Enquiry {% endblock title %}
 
 {% block extra_css %}
-  <link href="{% static 'vendor/bootstrap-datepicker/css/bootstrap-datepicker3.min.css' %}" rel="stylesheet" type="text/css" />
-  <link href="{% static 'vendor/bootstrap-timepicker/css/bootstrap-timepicker.min.css' %}"  rel="stylesheet" type="text/css" />
-  <link href="{% static 'vendor/bootstrap-datetimepicker/css/bootstrap-datetimepicker.min.css' %}"
+  {#  <link href="{% static 'vendor/bootstrap-datepicker/css/bootstrap-datepicker3.min.css' %}" rel="stylesheet" type="text/css" />#}
+  {#  <link href="{% static 'vendor/bootstrap-timepicker/css/bootstrap-timepicker.min.css' %}"  rel="stylesheet" type="text/css" />#}
+  {#  <link href="{% static 'vendor/bootstrap-datetimepicker/css/bootstrap-datetimepicker.min.css' %}"  rel="stylesheet" type="text/css" />#}
+
+  {#<link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet"/>#}
+  <style>
+    .datepicker {
+      z-index: 1600 !important; /* has to be larger than 1050 */
+    }
+  </style>
 {% endblock extra_css %}
 
 {% block content %}
@@ -89,7 +96,7 @@
           <input type="number" class="form-control" id="inputFirstName" name="num_infants" placeholder="No. of Infants (0-2 yrs)">
         </div>
 
-      <button type="submit" class="btn btn-danger btn-block">SUBMIT</button>
+        <button type="submit" class="btn btn-danger btn-block">SUBMIT</button>
 
       </form>
     </div>
@@ -97,20 +104,11 @@
   </div>
 {% endblock content %}
 {% block extra_js %}
-  <script src="{% static 'vendor/app.js' %}"></script>
-  <script src="{% static 'vendor/moment.min.js' %}"></script>
-  <script src="{% static 'vendor/bootstrap-daterangepicker/daterangepicker.min.js' %}"></script>
-  <script src="{% static 'vendor/bootstrap-datepicker/js/bootstrap-datepicker.min.js' %}"></script>
-  <script src="{% static 'vendor/bootstrap-timepicker/js/bootstrap-timepicker.min.js' %}"></script>
-  <script src="{% static 'vendor/bootstrap-datetimepicker/js/bootstrap-datetimepicker.min.js' %}"></script>
+  <script src="{% static 'vendor/bootstrap-datepicker.js' %}"></script>
   <script>
-    var initPickers = function () {
-        //init date pickers
-        $('.date-picker').datepicker({
-            rtl: App.isRTL(),
-            autoclose: true
-        });
-    };
-    initPickers();
+      $('.date-picker').datepicker({
+          format: 'mm/dd/yyyy',
+          autoclose: true
+      });
   </script>
 {% endblock extra_js %}

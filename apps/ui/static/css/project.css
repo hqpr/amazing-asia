@@ -335,6 +335,23 @@ a.btn-offer {
     background: #343a40;
 }
 
+.datepicker-dropdown {
+    color: white;
+    cursor: pointer;
+    padding-left: 10px;
+}
+
+.text_on_featured_pictures {
+    position: absolute;
+    bottom: 40%;
+    left: 25%;
+}
+
+.text_on_featured_pictures a {
+    color: white;
+    text-decoration: none;
+}
+
 @media (max-width: 767px) {
     .first_home_picture {
         margin-bottom: 22px;

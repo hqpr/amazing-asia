@@ -66,7 +66,7 @@
         <div class="tab-pane active" id="Villas" role="tabpanel">
 
           {% for villa in object.villasuite_set.all %}
-            {% if villa.villasuiteimage_set.all %}
+            {% if object.villasuiteimage_set.all %}
               <div id="carouselVillaIndicators" class="carousel slide" data-ride="carousel">
                 <div class="carousel-inner" role="listbox">
                   <div class="carousel-item active"
@@ -98,7 +98,7 @@
         </div>
         <div class="tab-pane" id="Wines" role="tabpanel">
           {% for wine in object.winedine_set.all %}
-            {% if wine.winedineimage_set.all %}
+            {% if object.winedineimage_set.all %}
               <div id="carouselWineIndicators" class="carousel slide" data-ride="carousel">
                 <div class="carousel-inner" role="listbox">
                   <div class="carousel-item active"
@@ -129,7 +129,7 @@
         </div>
         <div class="tab-pane" id="Wells" role="tabpanel">
           {% for well in object.wellness_set.all %}
-            {% if well.wellnessimage_set.all %}
+            {% if object.wellnessimage_set.all %}
               <div id="carouselWellIndicators" class="carousel slide" data-ride="carousel">
                 <div class="carousel-inner" role="listbox">
                   <div class="carousel-item active"
@@ -160,7 +160,7 @@
         </div>
         <div class="tab-pane" id="Exp" role="tabpanel">
           {% for exp in object.experience_set.all %}
-            {% if exp.experienceimage_set.all %}
+            {% if object.experienceimage_set.all %}
               <div id="carouselExpIndicators" class="carousel slide" data-ride="carousel">
                 <div class="carousel-inner" role="listbox">
                   <div class="carousel-item active"
@@ -191,11 +191,11 @@
         </div>
         <div class="tab-pane" id="Photos" role="tabpanel">
           {% for resort in object.resortimage_set.all %}
-            {% if resort.resortimage_set.all %}
+            {% if object.resortimage_set.all %}
               <div id="carouselResortIndicators" class="carousel slide" data-ride="carousel">
                 <div class="carousel-inner" role="listbox">
                   <div class="carousel-item active"
-                       style="background-image: url('{{ resort.resortimage_set.first.image.url }}')">
+                       style="background-image: url('{{ object.resortimage_set.first.image.url }}')">
                   </div>
                   {% for im in resort.resortimage_set.all %}
                     <div class="carousel-item" style="background-image: url('{{ im.image.url }}')">
