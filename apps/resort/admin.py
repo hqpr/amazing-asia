@@ -67,18 +67,22 @@ class ResortAdmin(admin.ModelAdmin):
 
 class VillaSuiteAdmin(admin.ModelAdmin):
     inlines = [VillaSuiteImageInline, ]
+    list_display = ('name', 'resort')
 
 
 class WineDineAdmin(admin.ModelAdmin):
     inlines = [WineDineImageInline, ]
+    list_display = ('name', 'resort')
 
 
 class WellnessAdmin(admin.ModelAdmin):
     inlines = [WellnessImageInline, ]
+    list_display = ('name', 'resort')
 
 
 class ExperienceAdmin(admin.ModelAdmin):
     inlines = [ExperienceImageInline, ]
+    list_display = ('name', 'resort')
 
 
 admin.site.register(Destination)
