@@ -203,6 +203,11 @@ hr {
 
 .page_content {
     margin-top: 45px;
+    background: #efefef;
+}
+
+.page_content .btn-danger {
+    font-size: 0.8rem;
 }
 
 .enquire {
@@ -231,8 +236,21 @@ hr {
     font-size: 1.2rem;
     color: #717171;
     margin-top: 3rem;
-    margin-bottom: 3rem;
+    margin-bottom: 2rem;
     display: block;
+}
+
+
+.contact-content {
+    background: #dcdcdc;
+    border: 2px solid #a8a8a8;
+}
+
+.contact-content button {
+    background: #d53f3f;
+    text-transform: uppercase;
+    font-size: 0.7rem;
+    cursor: pointer;
 }
 
 .enquiry_page button {
@@ -318,22 +336,6 @@ hr {
 
 a.btn-offer {
     color: #cfcfcf ;
-}
-
-/*.btn-offer:hover {*/
-/*background: transparent;*/
-/*color: #242e36;*/
-/*border: 1px solid #242e36;*/
-/*-webkit-transition: ease 1s;*/
-/*-moz-transition: ease 1s;*/
-/*-ms-transition: ease 1s;*/
-/*-o-transition: ease 1s;*/
-/*transition: ease 1s;*/
-/*}*/
-
-.contact-content {
-    background: #dcdcdc;
-    border: 2px solid #a8a8a8;
 }
 
 .pagination {
@@ -447,6 +449,14 @@ a.btn-offer {
     margin-bottom: 5rem;
     font-weight: bold;
 }
+
+#sidebar {
+  /*width: 190px;*/
+  position: fixed;
+  /*margin-left: 410px;*/
+    z-index: 99;
+}
+
 
 @media (max-width: 767px) {
     .first_home_picture {

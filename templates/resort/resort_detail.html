@@ -59,7 +59,7 @@
 {% endblock page_menu %}
 
 {% block content %}
-  <div class="row page_content">
+  <div class="row page_content" style="position: relative">
     <div class="col-md-7 mb-5">
 
       <div class="tab-content padding-top-20">
@@ -220,7 +220,7 @@
     </div>
 
     <div class="col-md-4 col-md-offset-1">
-      <div class="enquire text-center">
+      <div class="enquire text-center" id="sidebar">
         <p class="mb-5">Please book rooms in advance to ensure <br> availability and enjoy best prices.</p>
         <a class="button" href="{% url 'enquiry:add' %}">enquire now</a>
         <p class="mt-4">or call us at +960 7749407</p>
