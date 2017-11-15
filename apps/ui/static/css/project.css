@@ -530,4 +530,11 @@ a.btn-offer {
     .dropdown {
         display: block;
     }
+
+    .contact_sidebar {
+        margin-top: 20px;
+    }
+    .contact_sidebar img {
+        width: 100%;
+    }
 }
