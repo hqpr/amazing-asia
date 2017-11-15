@@ -1,6 +1,55 @@
+@font-face {
+    font-family: "proxima-nova";
+    font-weight: 300;
+    font-style: normal;
+    src: url("/static/fonts/proximanova-light-webfont.eot");
+    src: url("/static/fonts/proximanova-light-webfont.eot?#iefix") format("embedded-opentype"), url("/static/fonts/proximanova-light-webfont.woff2") format("woff2"), url("/static/fonts/proximanova-light-webfont.woff") format("woff"), url("/static/fonts/proximanova-light-webfont.ttf") format("truetype"), url("/static/fonts/proximanova-light-webfont.svg#proxima_novalight") format("svg")
+}
+
+@font-face {
+    font-family: "proxima-nova";
+    font-weight: 300;
+    font-style: italic;
+    src: url("/static/fonts/proximanova-lightit-webfont.eot");
+    src: url("/static/fonts/proximanova-lightit-webfont.eot?#iefix") format("embedded-opentype"), url("/static/fonts/proximanova-lightit-webfont.woff2") format("woff2"), url("/static/fonts/proximanova-lightit-webfont.woff") format("woff"), url("/static/fonts/proximanova-lightit-webfont.ttf") format("truetype"), url("/static/fonts/proximanova-lightit-webfont.svg#proxima_novalight") format("svg")
+}
+
+@font-face {
+    font-family: "proxima-nova";
+    font-weight: 400;
+    font-style: normal;
+    src: url("/static/fonts/proximanova-regular-webfont.eot");
+    src: url("/static/fonts/proximanova-regular-webfont.eot?#iefix") format("embedded-opentype"), url("/static/fonts/proximanova-regular-webfont.woff2") format("woff2"), url("/static/fonts/proximanova-regular-webfont.woff") format("woff"), url("/static/fonts/proximanova-regular-webfont.ttf") format("truetype"), url("/static/fonts/proximanova-regular-webfont.svg#proxima_novalight") format("svg")
+}
+
+@font-face {
+    font-family: "proxima-nova";
+    font-weight: 400;
+    font-style: italic;
+    src: url("/static/fonts/proximanova-regularit-webfont.eot");
+    src: url("/static/fonts/proximanova-regularit-webfont.eot?#iefix") format("embedded-opentype"), url("/static/fonts/proximanova-regularit-webfont.woff2") format("woff2"), url("/static/fonts/proximanova-regularit-webfont.woff") format("woff"), url("/static/fonts/proximanova-regularit-webfont.ttf") format("truetype"), url("/static/fonts/proximanova-regularit-webfont.svg#proxima_novalight") format("svg")
+}
+
+@font-face {
+    font-family: "proxima-nova";
+    font-weight: 600;
+    font-style: normal;
+    src: url("/static/fonts/proximanova-semibold-webfont.eot");
+    src: url("/static/fonts/proximanova-semibold-webfont.eot?#iefix") format("embedded-opentype"), url("/static/fonts/proximanova-semibold-webfont.woff2") format("woff2"), url("/static/fonts/proximanova-semibold-webfont.woff") format("woff"), url("/static/fonts/proximanova-semibold-webfont.ttf") format("truetype"), url("/static/fonts/proximanova-semibold-webfont.svg#proxima_novalight") format("svg")
+}
+
+@font-face {
+    font-family: "proxima-nova";
+    font-weight: 700;
+    font-style: normal;
+    src: url("/static/fonts/proximanova-semibold-webfont.eot");
+    src: url("/static/fonts/proximanova-semibold-webfont.eot?#iefix") format("embedded-opentype"), url("/static/fonts/proximanova-semibold-webfont.woff2") format("woff2"), url("/static/fonts/proximanova-semibold-webfont.woff") format("woff"), url("/static/fonts/proximanova-semibold-webfont.ttf") format("truetype"), url("/static/fonts/proximanova-semibold-webfont.svg#proxima_novalight") format("svg")
+}
+
 body {
     /*font-family: 'Open Sans Condensed', sans-serif;*/
-    font-family: 'Roboto', sans-serif;
+    /*font-family: 'Roboto', sans-serif;*/
+    font-family: 'proxima-nova', sans-serif;
     letter-spacing: 1px;
     background: #efefef;
 }
@@ -32,6 +81,8 @@ input::-webkit-input-placeholder {
     line-height: 3;
     color: #999999;
 }
+
+
 
 
 .top_menu {
@@ -154,18 +205,23 @@ hr {
 }
 
 .single_resort {
-    margin-bottom: 55px;
+    margin-bottom: 65px;
     color: #282828;
     cursor: pointer;
+    font-size: 0.8rem;
 }
 
 .text_content {
-    font-size: 18px;
+    font-size: 0.9rem;
     color: black;
+    padding: 25px;
 }
 
 .text_content a {
     color: black;
+}
+.text_content p {
+    font-size: 0.7rem;
 }
 
 .text_content a:hover {
@@ -174,36 +230,30 @@ hr {
 }
 
 .text_content:hover {
-    width: 99%;
+    width: 98.7%;
     background: #282828;
     color: #d0d0d0;
 }
 
-.hover_text_content a {
+.single_resort:hover .text_content {
+    background: #282828;
+    width: 98.7%;
+    min-height: 50px;
     color: #d0d0d0;
     text-decoration: none;
 }
-
-.hover_text_content {
-    display: none;
-    background: #282828;
-    width: 99%;
+.single_resort:hover .text_content a {
+    color: #d0d0d0;
+    text-decoration: none;
 }
-
-.hover_text_content b {
-    font-size: 18px;
-}
-
-.single_resort:hover .hover_text_content{
-    display: block;
-}
-.single_resort:hover .text_content{
-    display: none;
+.single_resort:hover .text_content p {
+    font-size: 0.7rem;
 }
 
 .page_content {
     margin-top: 45px;
     background: #efefef;
+    min-height: 400px;
 }
 
 .page_content .btn-danger {
@@ -418,7 +468,8 @@ a.btn-offer {
 .text_on_featured_pictures {
     position: absolute;
     bottom: 40%;
-    left: 20%;
+    left: 30%;
+    font-size: 1.5rem;
 }
 
 .text_on_featured_pictures a {
@@ -437,7 +488,8 @@ a.btn-offer {
 }
 
 .bold {
-    font-weight: bold !important;
+    /*font-weight: bold !important;*/
+    font-weight: 700 !important;
 }
 
 .resort_caption {
