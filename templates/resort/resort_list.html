@@ -4,7 +4,7 @@
 {% block title %} {{ object.name }} {% endblock %}
 
 {% block content %}
-  <h1 class="text-center mt-5 mb-5">{{ object.name }} Destinations</h1>
+  <h1 class="text-center mt-15 mb-5 bold">{{ object.name }} Destinations</h1>
   <div class="row">
     {% for resort in object_list %}
 
@@ -22,8 +22,8 @@
         </div>
         <div class="text-center hover_text_content">
           <a href="{% url 'resorts:resort-detail' resort.id %}"><b>{{ resort.name }}</b>
-          <p>{{ resort.location|default:"" }}
-            {% if resort.transfer_time %} / {{ resort.transfer_time }} minutes transfer {% endif %}</p>
+            <p>{{ resort.location|default:"" }}
+              {% if resort.transfer_time %} / {{ resort.transfer_time }} minutes transfer {% endif %}</p>
           </a>
         </div>
       </div>

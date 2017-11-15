@@ -4,7 +4,7 @@
 {% block title %} Special Offers {% endblock %}
 
 {% block content %}
-  <h1 class="text-center mt-5 mb-5">Special Offers</h1>
+  <h1 class="text-center mt-5 mb-5 bold">Special Offers</h1>
   {% for offer in object_list %}
     <div class="row offer">
       <div class="col-md-3">
@@ -17,7 +17,7 @@
       <div class="col-md-9 offer_content">
         <div class="offer_title">
           <a href="{% url 'offers:detail' offer.id %}">
-            <h3>{{ offer.name }}</h3>
+            <h4>{{ offer.name }}</h4>
             <hr>
             <p>{{ offer.description|safe }}</p>
             <p><b>Offer Expires On:</b> {{ offer.expires_at }} </p>

@@ -1,5 +1,6 @@
 body {
-    font-family: 'Open Sans Condensed', sans-serif;
+    /*font-family: 'Open Sans Condensed', sans-serif;*/
+    font-family: 'Roboto', sans-serif;
     letter-spacing: 1px;
     background: #efefef;
 }
@@ -17,17 +18,32 @@ input {
     -webkit-box-shadow: none !important;
     -moz-box-shadow: none !important;
     box-shadow: none !important;
+
+}
+
+.form-control {
+    border-radius: 0;
+    color: #999999;
+}
+
+input,
+input::-webkit-input-placeholder {
+    font-size: 12px;
+    line-height: 3;
+    color: #999999;
 }
 
 
 .top_menu {
     background: #242e36 !important;
-    font-size: 16px;
+    font-size: 12px;
+    font-weight: bold;
 }
 .top_menu li a {
     color: white;
     text-transform: uppercase;
-    padding-left: 25px;
+    margin-top: 5px;
+    margin-left: 25px;
 }
 .top_menu li a:hover {
     color: gray;
@@ -37,9 +53,10 @@ input {
 .top_menu button {
     background: #394854;
     border-radius: 0;
+    font-size: 12px;
     padding: 10px 15px;
     padding-left: 20px;
-    letter-spacing: 2px;
+    letter-spacing: 1.5px;
 }
 
 .dropdown-item:active {
@@ -71,21 +88,27 @@ input {
     background: black;
     height: 50px;
     width: 100%;
+    color: #cacaca;
 }
 
 .socials i {
     color: #cacaca;
-    margin-left: 20px;
+    margin-left: 50px;
     margin-top: 15px;
 }
 
 .bottom_menu {
     background: #313640;
     color: #cacaca;
+    font-size: 15px;
 }
 
 .bottom_menu a {
     color: #cacaca;
+}
+
+.bottom_menu h3 {
+    font-size: 23px;
 }
 
 footer {
@@ -96,7 +119,7 @@ footer a {
     color: white;
 }
 footer a:hover {
-    color: #cacaca;
+    color: white;
     text-decoration: none;
 }
 
@@ -116,6 +139,14 @@ hr {
     background: #242e36;
     border-radius: 0;
     border: 0;
+    opacity: 0.8;
+    font-size: 12px;
+    color: #e3e2e2;
+    left: 0;
+}
+
+.top_menu .dropdown-item:hover {
+    background: none;
 }
 
 .nav-item {
@@ -184,6 +215,23 @@ hr {
     margin-left: 15px;
 }
 
+.enquiry_page {
+    float: none; margin: 0 auto;
+    margin-bottom: 8rem;
+}
+.enquiry_page h4 {
+    font-size: 1.2rem;
+    color: #717171;
+    margin-top: 3rem;
+    margin-bottom: 3rem;
+    display: block;
+}
+
+.enquiry_page button {
+    background: #d53f3f;
+    cursor: pointer;
+}
+
 .enquire .button {
     border-radius: 0;
     text-transform: uppercase;
@@ -192,7 +240,7 @@ hr {
     margin-top: 20px;
     margin-bottom: 20px;
     color: #d8d8d8;
-    padding: 10px 40px;
+    padding: 20px 60px;
     cursor: pointer;
     font-style: normal;
     letter-spacing: 2px;
@@ -214,6 +262,7 @@ hr {
     border-left: 1px solid #cfcfcf;
     padding-bottom: 46px;
     background: white;
+    font-size: 13px;
 }
 
 .offer_content a {
@@ -221,7 +270,7 @@ hr {
     color: #282828;
 }
 
-.offer_content h3 {
+.offer_content h4 {
     font-weight: 700;
 }
 
@@ -254,7 +303,9 @@ hr {
     cursor: pointer;
     position: absolute;
     right: 0;
-    padding: 10px 30px;
+    padding: 14px 30px;
+    font-size: 11px;
+    bottom: 0;
 }
 
 a.btn-offer {
@@ -274,7 +325,7 @@ a.btn-offer {
 
 .contact-content {
     background: #dcdcdc;
-    border: 1px solid #a8a8a8;
+    border: 2px solid #a8a8a8;
 }
 
 .pagination {
@@ -314,7 +365,7 @@ a.btn-offer {
 }
 
 .page_menu li {
-    margin-right: 30px;
+    margin-right: 100px;
     line-height: 50px;
 }
 
@@ -344,12 +395,27 @@ a.btn-offer {
 .text_on_featured_pictures {
     position: absolute;
     bottom: 40%;
-    left: 25%;
+    left: 20%;
 }
 
 .text_on_featured_pictures a {
     color: white;
     text-decoration: none;
+}
+
+.mt-15 {
+    margin-top: 5rem !important;
+}
+.mb-20 {
+    margin-bottom: 15rem !important;
+}
+
+.bold {
+    font-weight: bold !important;
+}
+
+.resort_caption {
+    font-size: 2rem;
 }
 
 @media (max-width: 767px) {

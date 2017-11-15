@@ -5,7 +5,7 @@
 
 {% block page_name %}
   <p class="small">{{ object.location|default:"" }}</p>
-  <h3>{{ object.name }}</h3>
+  <h3 class="resort_caption">{{ object.name }}</h3>
 {% endblock page_name %}
 
 {% block page_menu %}
@@ -35,21 +35,21 @@
                  role="tab">Photos</a>
             </li>
 
-{#            <li class="dropdown visible-xs" role="presentation">#}
-{#              <a class="dropdown-toggle" data-toggle="dropdown" href="#" aria-expanded="false">#}
-{#                <span class="caret"></span>Menu </a>#}
-{#              <ul class="dropdown-menu" role="menu">#}
-{#                <li class="active" role="presentation">#}
-{#                  <a data-toggle="tab" href="#Villas" aria-controls="Villas"#}
-{#                                                          role="tab">Villas</a></li>#}
-{#                <li role="presentation"><a data-toggle="tab" href="#Wines" aria-controls="Wines"#}
-{#                                           role="tab">Wines</a></li>#}
-{#                <li role="presentation"><a data-toggle="tab" href="#Wells" aria-controls="Wells"#}
-{#                                           role="tab">Wells</a></li>#}
-{#                <li role="presentation"><a data-toggle="tab" href="#Exp" aria-controls="Exp"#}
-{#                                           role="tab">EXPERIENCE</a></li>#}
-{#              </ul>#}
-{#            </li>#}
+            {#            <li class="dropdown visible-xs" role="presentation">#}
+            {#              <a class="dropdown-toggle" data-toggle="dropdown" href="#" aria-expanded="false">#}
+            {#                <span class="caret"></span>Menu </a>#}
+            {#              <ul class="dropdown-menu" role="menu">#}
+            {#                <li class="active" role="presentation">#}
+            {#                  <a data-toggle="tab" href="#Villas" aria-controls="Villas"#}
+            {#                                                          role="tab">Villas</a></li>#}
+            {#                <li role="presentation"><a data-toggle="tab" href="#Wines" aria-controls="Wines"#}
+            {#                                           role="tab">Wines</a></li>#}
+            {#                <li role="presentation"><a data-toggle="tab" href="#Wells" aria-controls="Wells"#}
+            {#                                           role="tab">Wells</a></li>#}
+            {#                <li role="presentation"><a data-toggle="tab" href="#Exp" aria-controls="Exp"#}
+            {#                                           role="tab">EXPERIENCE</a></li>#}
+            {#              </ul>#}
+            {#            </li>#}
 
           </ul>
         </div>
@@ -223,7 +223,7 @@
       <div class="enquire text-center">
         <p class="mb-5">Please book rooms in advance to ensure <br> availability and enjoy best prices.</p>
         <a class="button" href="{% url 'enquiry:add' %}">enquire now</a>
-        <p class="mt-5">or call us at +960 7749407</p>
+        <p class="mt-4">or call us at +960 7749407</p>
       </div>
     </div>
 
