@@ -357,7 +357,8 @@ hr {
 }
 
 .offer_content h4 {
-    font-weight: 700;
+    font-weight: bold;
+    font-size: 1.2rem;
 }
 
 .offer_title {
@@ -406,8 +407,8 @@ a.btn-offer {
 }
 
 .pagination li {
-    width: 27px;
-    height: 27px;
+    width: 35px;
+    height: 35px;
     border: 1px solid #afafaf;
     -webkit-border-radius: 25px;
     -moz-border-radius: 25px;
@@ -416,7 +417,7 @@ a.btn-offer {
     margin-left: 15px;
     font-size: 14px;
     color: #afafaf;
-    padding: 3px;
+    padding: 5px;
 }
 
 .pagination a {
@@ -434,6 +435,14 @@ a.btn-offer {
     border: 1px solid black;
     background: black;
     color: #afafaf;
+    text-decoration: none;
+}
+.pagination li.active:hover {
+    background: transparent;
+    color: black;
+}
+
+.pagination a:hover {
     text-decoration: none;
 }
 
@@ -497,8 +506,8 @@ a.btn-offer {
     margin-bottom: 15rem !important;
 
 }.mb-15 {
-    margin-bottom: 5rem !important;
-}
+     margin-bottom: 5rem !important;
+ }
 
 .bold {
     /*font-weight: bold !important;*/
@@ -516,12 +525,11 @@ a.btn-offer {
 }
 
 #sidebar {
-  /*width: 190px;*/
-  position: fixed;
-  /*margin-left: 410px;*/
+    /*width: 190px;*/
+    position: fixed;
+    /*margin-left: 410px;*/
     z-index: 99;
 }
-
 
 @media (max-width: 767px) {
     .first_home_picture {

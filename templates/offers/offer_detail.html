@@ -5,17 +5,19 @@
 
 {% block content %}
   <div class="text-center page_title">
-    <h1 class="bold">{{ object.name }}</h1>
+    <h1 class="bold" style="font-size: 1.6rem; font-weight: 900">{{ object.name }}</h1>
     <h4>{{ object.offer_text|default:"" }}</h4>
   </div>
   <div class="row page_content">
-    <div class="col-md-6 mb-5">
+  <div class="col-md-2"></div>
+    <div class="col-md-4 mb-5">
       {% if object.image %}
         <img class="img-thumbnail" src="{{ object.image.url }}" alt="">
       {% endif %}
     </div>
     <div class="col-md-6 ">
       <div>
+        <h5 class="bold">Exclusive offer</h5>
         <p>{{ object.description|safe }}</p>
         <a href="{% url 'enquiry:add' %}" class="btn btn-danger">BOOK THIS PROPERTY</a>
       </div>

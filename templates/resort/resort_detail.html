@@ -214,4 +214,45 @@
 
   </div>
 
+  <div class="row">
+    <div class="col-xs-12 col-sm-12 d-md-none d-lg-none d-xl-none">
+      <div class="enquire text-center">
+        <p class="mb-5">Please book rooms in advance to ensure <br> availability and enjoy best prices.</p>
+        <a class="button" href="{% url 'enquiry:add' %}">enquire now</a>
+        <p class="mt-4">or call us at +960 7749407</p>
+      </div>
+    </div>
+  </div>
+
 {% endblock %}
+
+
+{% block extra_js %}
+  <script>
+{#$(function(){ // document ready#}
+{#   if ($('#sidebar').length) { // make sure "#sticky" element exists#}
+{#      var el = $('#sidebar');#}
+{#      var stickyTop = $('#sidebar').offset().top; // returns number#}
+{#      var stickyHeight = $('#sidebar').height();#}
+{##}
+{#      $(window).scroll(function(){ // scroll event#}
+{#          var limit = $('#footer').offset().top - stickyHeight - 350;#}
+{##}
+{#          var windowTop = $(window).scrollTop(); // returns number#}
+{##}
+{#          if (stickyTop < windowTop){#}
+{#             el.css({ position: 'fixed', top: 0 });#}
+{#          }#}
+{#          else {#}
+{#             el.css('position','static');#}
+{#          }#}
+{##}
+{#          if (limit < windowTop) {#}
+{#          var diff = limit - windowTop;#}
+{#          el.css({top: diff});#}
+{#          }#}
+{#        });#}
+{#   }#}
+{#});#}
+  </script>
+{% endblock extra_js %}
