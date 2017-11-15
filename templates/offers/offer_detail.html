@@ -4,21 +4,21 @@
 {% block title %} {{ object.name }}{% endblock %}
 
 {% block content %}
-    <div class="text-center mt-5">
-        <h1>{{ object.name }}</h1>
-        <h4>{{ object.offer_text|default:"" }}</h4>
+  <div class="text-center page_title">
+    <h1 class="bold">{{ object.name }}</h1>
+    <h4>{{ object.offer_text|default:"" }}</h4>
+  </div>
+  <div class="row page_content">
+    <div class="col-md-6 mb-5">
+      {% if object.image %}
+        <img class="img-thumbnail" src="{{ object.image.url }}" alt="">
+      {% endif %}
     </div>
-    <div class="row page_content">
-        <div class="col-md-6 mb-5">
-            {% if object.image %}
-                <img class="img-thumbnail" src="{{ object.image.url }}" alt="">
-            {% endif %}
-        </div>
-        <div class="col-md-6 ">
-            <div>
-                <p>{{ object.description|safe }}</p>
-                <a href="{% url 'enquiry:add' %}" class="btn btn-danger">BOOK THIS PROPERTY</a>
-            </div>
-        </div>
+    <div class="col-md-6 ">
+      <div>
+        <p>{{ object.description|safe }}</p>
+        <a href="{% url 'enquiry:add' %}" class="btn btn-danger">BOOK THIS PROPERTY</a>
+      </div>
     </div>
+  </div>
 {% endblock %}

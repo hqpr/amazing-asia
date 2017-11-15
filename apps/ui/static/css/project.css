@@ -227,6 +227,14 @@ hr {
     display: block;
 }
 
+.contact-content h4 {
+    font-size: 1.2rem;
+    color: #717171;
+    margin-top: 3rem;
+    margin-bottom: 3rem;
+    display: block;
+}
+
 .enquiry_page button {
     background: #d53f3f;
     cursor: pointer;
@@ -331,27 +339,40 @@ a.btn-offer {
 .pagination {
     float: none;
     margin: 0px auto;
+    margin-top: 4rem;
+    margin-bottom: 5rem;
 }
 
 .pagination li {
     width: 27px;
     height: 27px;
-    border: 1px solid black;
+    border: 1px solid #afafaf;
     -webkit-border-radius: 25px;
     -moz-border-radius: 25px;
     border-radius: 25px;
     text-align: center;
     margin-left: 15px;
-    font-size: 18px;
+    font-size: 14px;
+    color: #afafaf;
+    padding: 3px;
 }
 
 .pagination a {
-    color: black;
+    color: #afafaf;
 }
 
 .pagination li.active {
+    border: 1px solid black;
+    background: transparent;
+    color: black;
+}
+
+
+.pagination li:hover {
+    border: 1px solid black;
     background: black;
-    color: white;
+    color: #afafaf;
+    text-decoration: none;
 }
 
 .nav-tabs {
@@ -408,6 +429,9 @@ a.btn-offer {
 }
 .mb-20 {
     margin-bottom: 15rem !important;
+
+}.mb-15 {
+    margin-bottom: 5rem !important;
 }
 
 .bold {
@@ -416,6 +440,12 @@ a.btn-offer {
 
 .resort_caption {
     font-size: 2rem;
+}
+
+.page_title {
+    margin-top: 5rem;
+    margin-bottom: 5rem;
+    font-weight: bold;
 }
 
 @media (max-width: 767px) {

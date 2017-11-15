@@ -4,14 +4,14 @@
 {% block title %} Contact Us {% endblock %}
 
 {% block content %}
-  <h1 class="text-center mt-5 mb-2">Contact Us</h1>
-  <h4 class="text-center mb-3">We’ll Send a Reply Your Way In Less Than 24  Hours</h4>
+  <h1 class="text-center mt-15 mb-2 bold">Contact Us</h1>
+  <h4 class="text-center mb-15">We’ll Send a Reply Your Way In Less Than 24  Hours</h4>
   <div class="row">
     <div class="col-md-6">
       <div class="contact-content">
         <div class="col-md-8" style="float: none; margin: 0 auto; padding-bottom: 30px">
 
-          <h4 class="text-center mb-2 mt-4">Enter your bio details</h4>
+          <h4 class="text-center">Enter your bio details</h4>
           <form method="post" role="form" action=".">
             {% csrf_token %}
             {% if form.errors %}
@@ -45,7 +45,7 @@
               <input type="text" class="form-control" id="inputFirstName" name="residence"
                      placeholder="Residence (Enter your Nationality)">
             </div>
-            <h4 class="text-center mb-2 mt-4">What’s your message</h4>
+            <h4 class="text-center">What’s your message</h4>
             <div class="form-group">
               <label class="sr-only" for="inputEmail">Message</label>
               <textarea class="maxlength-textarea form-control" data-plugin="maxlength" data-placement="bottom-right-inside" maxlength="500" rows="3" placeholder="Enter your message here..." name="body"></textarea>
