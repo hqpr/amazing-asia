@@ -4,131 +4,139 @@
 
 
 {% block content %}
-  <div class="text-center">
+  <div class="text-center home_page">
     <h1 class="mt-5 mb-5">Featured Resorts</h1>
   </div>
-  <div class="row offers">
-    <div class="col-md-7 first_home_picture">
-      {% if resort_top_left.resortimage_set.all %}
-        <img class="img-responsive" style="width: 100%; height: 100%"
-             src="{{ resort_top_left.resortimage_set.first.image.url }}" alt="">
-        <h1 class="text_on_featured_pictures">
-          <a href="{% url 'resorts:resort-detail' resort_top_left.id %}">{{ resort_top_left|title }}</a>
-        </h1>
-      {% else %}
-        <div class="featured_products" style="min-height: 300px; line-height: 300px">
-          <a href="{% url 'resorts:resort-detail' resort_top_left.id %}">{{ resort_top_left|title }}</a>
-        </div>
-      {% endif %}
-    </div>
-    <div class="col-md-5">
-      <div class="mb-4">
-        {% if resort_top_right.resortimage_set.all %}
-          <img class="img-responsive" style="width: 100%; max-height: 150px"
-               src="{{ resort_top_right.resortimage_set.first.image.url }}" alt="">
-          <h1 class="text_on_featured_pictures" style="position: absolute; bottom: 65%; left: 20%">
-            <a href="{% url 'resorts:resort-detail' resort_top_right.id %}">{{ resort_top_right|title }}</a>
+  <div class="col-md-11" style="float: none; margin: 0 auto">
+    <div class="row offers">
+
+      <div class="col-md-6 first_home_picture">
+        {% if resort_top_left.resortimage_set.all %}
+          <img class="img-responsive" style="width: 100%; height: 344px"
+               src="{{ resort_top_left.resortimage_set.first.image.url }}" alt="">
+          <h1 class="text_on_featured_pictures">
+            <a href="{% url 'resorts:resort-detail' resort_top_left.id %}">{{ resort_top_left|title }}</a>
           </h1>
         {% else %}
-          <div class="featured_products" style="min-height: 130px; line-height: 150px">
-            <a href="{% url 'resorts:resort-detail' resort_top_right.id %}">{{ resort_top_right|title }}</a>
+          <div class="featured_products" style="min-height: 300px; line-height: 300px">
+            <a href="{% url 'resorts:resort-detail' resort_top_left.id %}">{{ resort_top_left|title }}</a>
           </div>
         {% endif %}
       </div>
-      <div>
-        {% if resort_bottom_left.resortimage_set.all %}
+      <div class="col-md-5">
+        <div class="mb-4">
+          {% if resort_top_right.resortimage_set.all %}
+            <img class="img-responsive" style="width: 100%; max-height: 150px"
+                 src="{{ resort_top_right.resortimage_set.first.image.url }}" alt="">
+            <h1 class="text_on_featured_pictures" style="position: absolute; bottom: 65%; left: 20%">
+              <a href="{% url 'resorts:resort-detail' resort_top_right.id %}">{{ resort_top_right|title }}</a>
+            </h1>
+          {% else %}
+            <div class="featured_products" style="min-height: 130px; line-height: 150px">
+              <a href="{% url 'resorts:resort-detail' resort_top_right.id %}">{{ resort_top_right|title }}</a>
+            </div>
+          {% endif %}
+        </div>
+        <div>
+          {% if resort_bottom_left.resortimage_set.all %}
+            <img class="img-responsive" style="width: 100%; max-height: 150px"
+                 src="{{ resort_bottom_left.resortimage_set.first.image.url }}" alt="">
+            <h1 class="text_on_featured_pictures" style="bottom: 15%; left: 20%">
+              <a href="{% url 'resorts:resort-detail' resort_bottom_left.id %}">{{ resort_bottom_left|title }}</a>
+            </h1>
+          {% else %}
+            <div class="featured_products" style="min-height: 130px; line-height: 150px">
+              <a href="{% url 'resorts:resort-detail' resort_bottom_left.id %}">{{ resort_bottom_left|title }}</a>
+            </div>
+          {% endif %}
+        </div>
+      </div>
+
+    </div>
+
+    <div class="row offers mt-4">
+      <div class="col-md-11">
+        {% if resort_bottom_center.resortimage_set.all %}
           <img class="img-responsive" style="width: 100%; max-height: 150px"
-               src="{{ resort_bottom_left.resortimage_set.first.image.url }}" alt="">
-          <h1 class="text_on_featured_pictures" style="bottom: 15%; left: 20%">
-            <a href="{% url 'resorts:resort-detail' resort_bottom_left.id %}">{{ resort_bottom_left|title }}</a>
+               src="{{ resort_bottom_center.resortimage_set.first.image.url }}" alt="">
+          <h1 class="text_on_featured_pictures" style="left: 40%">
+            <a href="{% url 'resorts:resort-detail' resort_bottom_center.id %}">{{ resort_bottom_center|title }}</a>
           </h1>
         {% else %}
-          <div class="featured_products" style="min-height: 130px; line-height: 150px">
-            <a href="{% url 'resorts:resort-detail' resort_bottom_left.id %}">{{ resort_bottom_left|title }}</a>
+          <div class="featured_products" style="min-height: 170px; line-height: 170px">
+            <a href="{% url 'resorts:resort-detail' resort_bottom_center.id %}">{{ resort_bottom_center|title }}</a>
           </div>
         {% endif %}
       </div>
     </div>
   </div>
 
-  <div class="row offers mt-4">
-    <div class="col-md-12">
-      {% if resort_bottom_center.resortimage_set.all %}
-        <img class="img-responsive" style="width: 100%; max-height: 150px"
-             src="{{ resort_bottom_center.resortimage_set.first.image.url }}" alt="">
-        <h1 class="text_on_featured_pictures" style="left: 40%">
-          <a href="{% url 'resorts:resort-detail' resort_bottom_center.id %}">{{ resort_bottom_center|title }}</a>
-        </h1>
-      {% else %}
-        <div class="featured_products" style="min-height: 170px; line-height: 170px">
-          <a href="{% url 'resorts:resort-detail' resort_bottom_center.id %}">{{ resort_bottom_center|title }}</a>
-        </div>
-      {% endif %}
-    </div>
-  </div>
-
-  <div class="text-center">
+  <div class="text-center home_page">
     <h1 class="mt-15 mb-5">Special Offers</h1>
   </div>
 
-  <div class="row offers">
-    <div class="col-md-7 first_home_picture">
-      {% if offer_top_left.image %}
-        <img class="img-responsive" style="width: 100%; height: 100%"
-             src="{{ offer_top_left.image.url }}" alt="">
-        <h1 class="text_on_featured_pictures">
-          <a href="{% url 'offers:detail' offer_top_left.id %}">{{ offer_top_left|title }}</a>
-        </h1>
-      {% else %}
-        <div class="featured_products" style="min-height: 300px; line-height: 300px">
-          <a href="{% url 'offers:detail' offer_top_left.id %}">{{ offer_top_left|title }}</a>
-        </div>
-      {% endif %}
-    </div>
-    <div class="col-md-5">
-      <div class="mb-4">
-        {% if offer_top_right.image %}
-          <img class="img-responsive" style="width: 100%; max-height: 150px"
-               src="{{ offer_top_right.image.url }}" alt="">
-          <h1 class="text_on_featured_pictures" style="position: absolute; bottom: 65%; left: 25%">
-            <a href="{% url 'offers:detail' offer_top_right.id %}">{{ offer_top_right|title }}</a>
-          </h1>
-        {% else %}
-          <div class="featured_products" style="min-height: 130px; line-height: 150px">
-            <a href="{% url 'offers:detail' offer_top_right.id %}">{{ offer_top_right|title }}</a>
-          </div>
-        {% endif %}
-      </div>
-      <div>
-        {% if offer_bottom_left.image %}
-          <img class="img-responsive" style="width: 100%; max-height: 150px"
-               src="{{ offer_bottom_left.image.url }}" alt="">
-          <h1 class="text_on_featured_pictures" style="bottom: 15%; left: 20%">
-            <a href="{% url 'offers:detail' offer_bottom_left.id %}">{{ offer_bottom_left|title }}</a>
-          </h1>
-        {% else %}
-          <div class="featured_products" style="min-height: 130px; line-height: 150px">
-            <a href="{% url 'offers:detail' offer_bottom_left.id %}">{{ offer_bottom_left|title }}</a>
-          </div>
-        {% endif %}
-      </div>
-    </div>
-  </div>
+  <div class="col-md-11" style="float: none; margin: 0 auto">
 
-  <div class="row offers mt-4 mb-20">
-    <div class="col-md-12">
-      {% if offer_bottom_center.image %}
-        <img class="img-responsive" style="width: 100%; max-height: 150px"
-             src="{{ offer_bottom_center.image.url }}" alt="">
-        <h1 class="text_on_featured_pictures" style="left: 40%">
-          <a href="{% url 'offers:detail' offer_bottom_center.id %}">{{ offer_bottom_center|title }}</a>
-        </h1>
-      {% else %}
-        <div class="featured_products" style="min-height: 170px; line-height: 170px">
-          <a href="{% url 'offers:detail' offer_bottom_center.id %}">{{ offer_bottom_center|title }}</a>
+    <div class="row offers">
+      <div class="col-md-6 first_home_picture">
+        {% if offer_top_left.image %}
+          <img class="img-responsive" style="width: 100%; height: 344px"
+               src="{{ offer_top_left.image.url }}" alt="">
+          <h1 class="text_on_featured_pictures">
+            <a href="{% url 'offers:detail' offer_top_left.id %}">{{ offer_top_left|title }}</a>
+          </h1>
+        {% else %}
+          <div class="featured_products" style="min-height: 300px; line-height: 300px">
+            <a href="{% url 'offers:detail' offer_top_left.id %}">{{ offer_top_left|title }}</a>
+          </div>
+        {% endif %}
+      </div>
+      <div class="col-md-5">
+        <div class="mb-4">
+          {% if offer_top_right.image %}
+            <img class="img-responsive" style="width: 100%; max-height: 150px"
+                 src="{{ offer_top_right.image.url }}" alt="">
+            <h1 class="text_on_featured_pictures" style="position: absolute; bottom: 65%; left: 25%">
+              <a href="{% url 'offers:detail' offer_top_right.id %}">{{ offer_top_right|title }}</a>
+            </h1>
+          {% else %}
+            <div class="featured_products" style="min-height: 130px; line-height: 150px">
+              <a href="{% url 'offers:detail' offer_top_right.id %}">{{ offer_top_right|title }}</a>
+            </div>
+          {% endif %}
         </div>
-      {% endif %}
+        <div>
+          {% if offer_bottom_left.image %}
+            <img class="img-responsive" style="width: 100%; max-height: 150px"
+                 src="{{ offer_bottom_left.image.url }}" alt="">
+            <h1 class="text_on_featured_pictures" style="bottom: 15%; left: 20%">
+              <a href="{% url 'offers:detail' offer_bottom_left.id %}">{{ offer_bottom_left|title }}</a>
+            </h1>
+          {% else %}
+            <div class="featured_products" style="min-height: 130px; line-height: 150px">
+              <a href="{% url 'offers:detail' offer_bottom_left.id %}">{{ offer_bottom_left|title }}</a>
+            </div>
+          {% endif %}
+        </div>
+      </div>
     </div>
+
+    <div class="row offers mt-4 mb-20">
+      <div class="col-md-11">
+        {% if offer_bottom_center.image %}
+          <img class="img-responsive" style="width: 100%; max-height: 150px"
+               src="{{ offer_bottom_center.image.url }}" alt="">
+          <h1 class="text_on_featured_pictures" style="left: 40%">
+            <a href="{% url 'offers:detail' offer_bottom_center.id %}">{{ offer_bottom_center|title }}</a>
+          </h1>
+        {% else %}
+          <div class="featured_products" style="min-height: 170px; line-height: 170px">
+            <a href="{% url 'offers:detail' offer_bottom_center.id %}">{{ offer_bottom_center|title }}</a>
+          </div>
+        {% endif %}
+      </div>
+    </div>
+
   </div>
 
 

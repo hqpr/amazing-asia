@@ -118,6 +118,10 @@ input::-webkit-input-placeholder {
     text-align: center;
 }
 
+.home_page h1 {
+    font-size: 1.9rem;
+}
+
 .featured_products {
     background: #333333;
     width: 100%;
@@ -258,6 +262,12 @@ hr {
 
 .page_content .btn-danger {
     font-size: 0.8rem;
+}
+
+.page_content h1{
+    margin: 3rem 0;
+    font-weight: 700;
+    font-size: 2rem;
 }
 
 .enquire {
@@ -434,16 +444,19 @@ a.btn-offer {
 .page_menu {
     height: 50px;
     text-transform: uppercase;
-    font-size: 12px;
+    font-size: 0.6rem;
 }
 
 .page_menu li {
     margin-right: 100px;
     line-height: 50px;
+    display: block;
 }
 
 .page_menu li a.active{
     color: #a8a8a8;
+    background: #2a343f;
+    padding: 19px 0;
 }
 
 .page_menu li a {
