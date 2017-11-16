@@ -526,11 +526,15 @@ a.btn-offer {
     font-weight: bold;
 }
 
-#sidebar {
-    /*width: 190px;*/
-    position: fixed;
-    /*margin-left: 410px;*/
-    z-index: 99;
+/*#sidebar {*/
+    /*!*width: 190px;*!*/
+    /*position: fixed;*/
+    /*!*margin-left: 410px;*!*/
+    /*z-index: 99;*/
+/*}*/
+
+#page_menu {
+    z-index: 80;
 }
 
 .caption {

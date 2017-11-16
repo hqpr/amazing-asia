@@ -9,7 +9,7 @@
 {% endblock page_name %}
 
 {% block page_menu %}
-  <div class="nav-tabs-horizontal">
+  <div class="nav-tabs-horizontal" id="page_menu">
     <!-- Navigation -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark page_menu">
       <div class="container">
@@ -42,7 +42,7 @@
 {% endblock page_menu %}
 
 {% block content %}
-  <div class="row page_content" style="position: relative">
+  <div class="row page_content" style="position: relative" data-sticky_parent>
     <div class="col-md-7 mb-5">
 
       <div class="tab-content padding-top-20">
@@ -228,31 +228,10 @@
 
 
 {% block extra_js %}
+  <script src="{% static 'vendor/jquery.sticky-kit.min.js' %}"></script>
+
   <script>
-{#$(function(){ // document ready#}
-{#   if ($('#sidebar').length) { // make sure "#sticky" element exists#}
-{#      var el = $('#sidebar');#}
-{#      var stickyTop = $('#sidebar').offset().top; // returns number#}
-{#      var stickyHeight = $('#sidebar').height();#}
-{##}
-{#      $(window).scroll(function(){ // scroll event#}
-{#          var limit = $('#footer').offset().top - stickyHeight - 350;#}
-{##}
-{#          var windowTop = $(window).scrollTop(); // returns number#}
-{##}
-{#          if (stickyTop < windowTop){#}
-{#             el.css({ position: 'fixed', top: 0 });#}
-{#          }#}
-{#          else {#}
-{#             el.css('position','static');#}
-{#          }#}
-{##}
-{#          if (limit < windowTop) {#}
-{#          var diff = limit - windowTop;#}
-{#          el.css({top: diff});#}
-{#          }#}
-{#        });#}
-{#   }#}
-{#});#}
+  $("#page_menu").stick_in_parent({'offset_top': 64});
+  $("#sidebar").stick_in_parent({'offset_top': 406});
   </script>
 {% endblock extra_js %}
