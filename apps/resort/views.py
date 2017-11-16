@@ -11,6 +11,9 @@ class DestinationListView(ListView):
     model = Destination
     paginate_by = 9
 
+    def get_paginate_by(self, queryset):
+        return self.request.GET.get('show', self.paginate_by)
+
     def get_queryset(self, *args, **kwargs):
         pk = self.kwargs.get('destination_id')
         queryset = Resort.objects.filter(is_active=True, destination=pk)

@@ -82,6 +82,8 @@ input::-webkit-input-placeholder {
     color: #999999;
 }
 
+select { -webkit-appearance: none; }
+
 
 
 
@@ -550,6 +552,49 @@ a.btn-offer {
 .home_thumbnail {
     position: relative;
 }
+
+.resort_filters {
+    margin-bottom: 3rem;
+}
+
+.resort_filters button {
+    width: 100%;
+    padding: 20px 40px;
+    background: #242e36;
+    color: #cccccc;
+    text-transform: uppercase;
+    font-size: 0.6rem;
+    line-height: 1.5;
+    border-radius: 0;
+    text-align: left;
+    cursor: pointer;
+}
+
+.resort_filters .dropdown-toggle {
+    background: #242e36 !important;
+    color: #cccccc !important;
+    box-shadow: none !important;
+}
+
+.resort_filters .dropdown-item {
+    color: #cccccc;
+    font-size: 0.6rem;
+    text-transform: uppercase;
+}
+
+.resort_filters .dropdown-item:hover {
+    color: white;
+    background: transparent;
+
+}
+
+.resort_filters .dropdown-menu {
+    background: #242e36;
+    border-radius: 0;
+    color: #cccccc;
+    width: 100%;
+}
+
 
 @media (max-width: 767px) {
     .first_home_picture {

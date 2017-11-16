@@ -4,7 +4,53 @@
 {% block title %} {{ object.name }} {% endblock %}
 
 {% block content %}
-  <h1 class="text-center mt-15 mb-5 bold">{{ object.name }} Destinations</h1>
+  <h1 class="text-center mt-15 mb-5 bold font-weight-bold">{{ object.name }} Destinations</h1>
+
+  <div class="row resort_filters">
+    <div class="col-md-3">
+
+      <div class="dropdown">
+        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Sort by: {{ object.name }}
+        </button>
+        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+
+          {% for destination in all_destinations %}
+            <a class="dropdown-item" href="{% url 'resorts:destination-detail' destination.id %}">{{ destination.name }}</a>
+          {% endfor %}
+        </div>
+      </div>
+
+    </div>
+    <div class="col-md-3">
+      <div class="dropdown">
+        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Transfer: All Transfers
+        </button>
+        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+{#          <a class="dropdown-item" href="#">Action</a>#}
+{#          <a class="dropdown-item" href="#">Another action</a>#}
+{#          <a class="dropdown-item" href="#">Something else here</a>#}
+        </div>
+      </div>
+
+    </div>
+    <div class="col-md-2 ml-auto">
+
+      <div class="dropdown">
+        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownShow" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Show: 09
+        </button>
+        <div class="dropdown-menu" aria-labelledby="dropdownShow">
+          <a class="dropdown-item" href="?show=9">Show: 09</a>
+          <a class="dropdown-item" href="?show=18">Show: 18</a>
+          <a class="dropdown-item" href="?show=36">Show: 36</a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
   <div class="row">
     {% for resort in object_list %}
 
@@ -13,6 +59,8 @@
           {% thumbnail resort.resortimage_set.first "345x345" crop="center" as im %}
             <a href="{% url 'resorts:resort-detail' resort.id %}"><img src="{{ im.url }}" /></a>
           {% endthumbnail %}
+        {% else %}
+          <a href="{% url 'resorts:resort-detail' resort.id %}"><img src="http://placehold.it/345x345" /></a>
         {% endif %}
         <br>
         <div class="text-center text_content">
@@ -29,23 +77,43 @@
     {% if is_paginated %}
       <ul class="pagination">
         {% if page_obj.has_previous %}
-{#          <li><a href="?page={{ page_obj.previous_page_number }}">&laquo;</a></li>#}
+          {#          <li><a href="?page={{ page_obj.previous_page_number }}">&laquo;</a></li>#}
         {% else %}
-{#          <li class="disabled"><span>&laquo;</span></li>#}
+          {#          <li class="disabled"><span>&laquo;</span></li>#}
         {% endif %}
         {% for i in page_obj.paginator.page_range %}
           {% if page_obj.number == i %}
             <li class="active"><span>{{ i }} <span class="sr-only">(current)</span></span></li>
           {% else %}
-{#            <li><a href="?page={{ i }}">{{ i }}</a></li>#}
+            {#            <li><a href="?page={{ i }}">{{ i }}</a></li>#}
           {% endif %}
         {% endfor %}
         {% if page_obj.has_next %}
-{#          <li><a href="?page={{ page_obj.next_page_number }}">&raquo;</a></li>#}
+          {#          <li><a href="?page={{ page_obj.next_page_number }}">&raquo;</a></li>#}
         {% else %}
-{#          <li class="disabled"><span>&raquo;</span></li>#}
+          {#          <li class="disabled"><span>&raquo;</span></li>#}
         {% endif %}
       </ul>
     {% endif %}
   </div>
+{% endblock %}
+
+{% block extra_js %}
+<script>
+    $.urlParam = function(name){
+        var results = new RegExp('[\?&]' + name + '=([^&#]*)').exec(window.location.href);
+        if (results==null){
+            return null;
+        }
+        else{
+            return results[1] || 0;
+        }
+    };
+
+    var show = $.urlParam('show');
+
+    if (show != null) {
+        $('#dropdownShow').text('Show: '+show)
+    }
+</script>
 {% endblock %}
