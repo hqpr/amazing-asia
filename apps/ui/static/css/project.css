@@ -123,6 +123,14 @@ select { -webkit-appearance: none; }
     text-align: center;
 }
 
+.offers a {
+    color: white;
+    opacity: 0.9;
+    font-weight: 100;
+    font-size: 1.2rem;
+}
+
+
 .home_page h1 {
     font-size: 1.9rem;
 }
@@ -420,7 +428,7 @@ a.btn-offer {
     border-radius: 25px;
     text-align: center;
     margin-left: 15px;
-    font-size: 14px;
+    font-size: 16px;
     color: #afafaf;
     padding: 5px;
 }
@@ -435,6 +443,22 @@ a.btn-offer {
     color: black;
 }
 
+.red li.active {
+    border: 1px solid #b63333 !important;
+    background: transparent;
+    color: #b63333 !important;
+}
+
+.red li:hover {
+    border: 1px solid #b63333;
+    background: #b63333;
+    color: #afafaf;
+    text-decoration: none;
+}
+.red li.active:hover {
+    background: transparent;
+    color: #b63333;
+}
 
 .pagination li:hover {
     border: 1px solid black;
@@ -446,6 +470,7 @@ a.btn-offer {
     background: transparent;
     color: black;
 }
+
 
 .pagination a:hover {
     text-decoration: none;
@@ -575,7 +600,7 @@ a.btn-offer {
 
 .resort_filters button {
     width: 100%;
-    padding: 20px 40px;
+    padding: 15px 20px;
     background: #242e36;
     color: #cccccc;
     text-transform: uppercase;

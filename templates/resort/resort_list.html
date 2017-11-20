@@ -4,7 +4,8 @@
 {% block title %} {{ object.name }} {% endblock %}
 
 {% block content %}
-  <h1 class="text-center mt-15 mb-5 bold font-weight-bold">{{ object.name }} Destinations</h1>
+  <h1 class="text-center mt-15 bold" style="font-weight: 900; font-size: 2.0rem; margin-bottom: 5rem;">
+    {{ object.name }} Destinations</h1>
 
   <div class="row resort_filters">
     <div class="col-md-3">
@@ -24,13 +25,13 @@
     </div>
     <div class="col-md-3">
       <div class="dropdown">
-        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownTransfer" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           Transfer: All Transfers
         </button>
-        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-{#          <a class="dropdown-item" href="#">Action</a>#}
-{#          <a class="dropdown-item" href="#">Another action</a>#}
-{#          <a class="dropdown-item" href="#">Something else here</a>#}
+        <div class="dropdown-menu" aria-labelledby="dropdownTransfer">
+          <a class="dropdown-item" href="?transfer=0">Seaplane</a>
+          <a class="dropdown-item" href="?transfer=1">Speedboat</a>
+          <a class="dropdown-item" href="?transfer=2">Domestic Flight</a>
         </div>
       </div>
 
@@ -57,10 +58,10 @@
       <div class="col-lg-4 single_resort">
         {% if resort.resortimage_set.all %}
           {% thumbnail resort.resortimage_set.first "345x345" crop="center" as im %}
-            <a href="{% url 'resorts:resort-detail' resort.id %}"><img src="{{ im.url }}" /></a>
+            <a href="{% url 'resorts:resort-detail' resort.id %}"><img class="img-responsive" src="{{ im.url }}" /></a>
           {% endthumbnail %}
         {% else %}
-          <a href="{% url 'resorts:resort-detail' resort.id %}"><img src="http://placehold.it/345x345" /></a>
+          <a href="{% url 'resorts:resort-detail' resort.id %}"><img class="img-responsive" src="http://placehold.it/345x345" /></a>
         {% endif %}
         <br>
         <div class="text-center text_content">
@@ -75,7 +76,7 @@
   <div class="row">
 
     {% if is_paginated %}
-      <ul class="pagination">
+      <ul class="pagination red" style="margin-bottom: 15rem;">
         {% if page_obj.has_previous %}
           {#          <li><a href="?page={{ page_obj.previous_page_number }}">&laquo;</a></li>#}
         {% else %}
@@ -111,9 +112,21 @@
     };
 
     var show = $.urlParam('show');
+    var transfer = $.urlParam('transfer');
 
     if (show != null) {
         $('#dropdownShow').text('Show: '+show)
+    }
+    if (transfer != null) {
+        if (transfer==1) {
+          $('#dropdownTransfer').text('Transfer: : Speedboat')
+        }
+        if (transfer==2) {
+          $('#dropdownTransfer').text('Transfer: : Domestic Flight')
+        }
+        if (transfer==0) {
+          $('#dropdownTransfer').text('Transfer: : Seaplane')
+        }
     }
 </script>
 {% endblock %}

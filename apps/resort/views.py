@@ -16,7 +16,11 @@ class DestinationListView(ListView):
 
     def get_queryset(self, *args, **kwargs):
         pk = self.kwargs.get('destination_id')
-        queryset = Resort.objects.filter(is_active=True, destination=pk)
+        transfer = self.request.GET.get('transfer')
+        if transfer:
+            queryset = Resort.objects.filter(is_active=True, destination=pk, transfer=transfer)
+        else:
+            queryset = Resort.objects.filter(is_active=True, destination=pk)
         return queryset
 
     def get_context_data(self, **kwargs):

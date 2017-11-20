@@ -7,16 +7,16 @@ from apps.resort.models import Resort, Destination
 class Command(BaseCommand):
 
     def handle(self, *args, **options):
-        Destination.objects.create(name='Maldives')
-        Destination.objects.create(name='Mautirius')
-        Destination.objects.create(name='Seychelles')
-        Destination.objects.create(name='Indonesia')
-        Destination.objects.create(name='Thailand')
-        Destination.objects.create(name='Malaysia')
-        Destination.objects.create(name='Singapore')
-        Destination.objects.create(name='Sri Lanka')
-        Destination.objects.create(name='Dubai')
-        Destination.objects.create(name='Vietnam')
+        # Destination.objects.create(name='Maldives')
+        # Destination.objects.create(name='Mautirius')
+        # Destination.objects.create(name='Seychelles')
+        # Destination.objects.create(name='Indonesia')
+        # Destination.objects.create(name='Thailand')
+        # Destination.objects.create(name='Malaysia')
+        # Destination.objects.create(name='Singapore')
+        # Destination.objects.create(name='Sri Lanka')
+        # Destination.objects.create(name='Dubai')
+        # Destination.objects.create(name='Vietnam')
 
         for x in range(10):
             Offer.objects.create(name='Anantara Veli Resort & Spa Summer Escape',
@@ -27,7 +27,7 @@ class Command(BaseCommand):
                                  stays_to='2018-12-15',
                                  is_active=True)
 
-        destination = Destination.objects.get(name='Maldives')
+        destination = Destination.objects.filter(name='Maldives')[0]
         description = 'As the water flows down the bamboo, air passes through the tube and vibrates every fiber ' \
                       'of the instrument, skillfully blown through the shakuhachi by a figure sitting upon a wooden' \
                       ' chair, whose identity has no relevance to the situation; a situation that allows deep and' \
