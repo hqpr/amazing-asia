@@ -85,6 +85,9 @@ input::-webkit-input-placeholder {
 select { -webkit-appearance: none; }
 
 
+.regular-font {
+    font-weight: 400;
+}
 
 
 .top_menu {
@@ -547,6 +550,15 @@ a.btn-offer {
 .caption a {
     color: white;
     font-size: 1.3rem;
+    font-weight: 100;
+}
+
+.caption span {
+    display: block;
+    font-weight: 400;
+    color: white;
+    text-transform: uppercase;
+    font-size: 0.5rem;
 }
 
 .caption a:hover {

@@ -32,6 +32,7 @@ class Offer(models.Model):
     is_active = models.BooleanField(default=False)
     is_featured = models.BooleanField(default=False)
     featured_position = models.IntegerField(choices=POSITION_CHOICES, blank=True, null=True)
+    resort = models.ForeignKey('resort.Resort', null=True, blank=True)
 
     objects = OfferManager()
 

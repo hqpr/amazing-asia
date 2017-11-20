@@ -44,6 +44,12 @@ class Resort(models.Model):
         (3, 'Bottom center')
     )
 
+    TRANSFER_CHOICES = (
+        (0, 'Seaplane'),
+        (1, 'Speedboat'),
+        (2, 'Domestic Flight'),
+    )
+
     destination = models.ForeignKey(Destination)
     name = models.CharField(max_length=255)
     description = models.TextField(blank=True, null=True)
@@ -54,6 +60,7 @@ class Resort(models.Model):
     featured_position = models.IntegerField(choices=POSITION_CHOICES, blank=True, null=True)
     location = models.CharField(max_length=255, null=True, blank=True)
     transfer_time = models.IntegerField(null=True, blank=True, help_text='eg: 25 minutes')
+    transfer = models.IntegerField(choices=TRANSFER_CHOICES, default=0)
 
     objects = ResortManager()
 

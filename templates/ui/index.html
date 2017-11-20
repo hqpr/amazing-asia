@@ -5,7 +5,7 @@
 
 {% block content %}
   <div class="text-center home_page">
-    <h1 class="mt-5 mb-5">Featured Resorts</h1>
+    <h1 class="mt-5 mb-5 regular-font">Featured Resorts</h1>
   </div>
   <div class="col-md-11" style="float: none; margin: 0 auto">
     <div class="row offers">
@@ -16,12 +16,14 @@
             <img class="img-responsive" style="width: 100%; height: 344px;"
                  src="{{ resort_top_left.resortimage_set.first.image.url }}" alt="">
             <div class="caption">
+              <span>{{ resort_top_left.location|default:"" }}</span>
               <a href="{% url 'resorts:resort-detail' resort_top_left.id %}">{{ resort_top_left.name|title }}</a>
             </div>
           </div>
         {% else %}
           <div class="featured_products home_thumbnail" style="min-height: 300px;">
             <div class="caption">
+              <span>{{ resort_top_left.location|default:"" }}</span>
               <a href="{% url 'resorts:resort-detail' resort_top_left.id %}">
                 {{ resort_top_left.name|title }}</a>
             </div>
@@ -35,6 +37,7 @@
               <img class="img-responsive" style="width: 100%; max-height: 150px"
                    src="{{ resort_top_right.resortimage_set.first.image.url }}" alt="">
               <div class="caption">
+                <span>{{ resort_top_right.location|default:"" }}</span>
                 <a href="{% url 'resorts:resort-detail' resort_top_right.id %}">{{ resort_top_right.name|title }}</a>
               </div>
             </div>
@@ -42,6 +45,7 @@
 
             <div class="featured_products home_thumbnail" style="min-height: 170px;">
               <div class="caption">
+                <span>{{ resort_top_right.location|default:"" }}</span>
                 <a href="{% url 'resorts:resort-detail' resort_top_right.id %}">
                   {{ resort_top_right.name|title }}</a>
               </div>
@@ -55,6 +59,7 @@
               <img class="img-responsive" style="width: 100%; max-height: 150px"
                    src="{{ resort_bottom_left.resortimage_set.first.image.url }}" alt="">
               <div class="caption">
+                <span>{{ resort_bottom_left.location|default:"" }}</span>
                 <a href="{% url 'resorts:resort-detail' resort_bottom_left.id %}">
                   {{ resort_bottom_left.name|title }}</a>
               </div>
@@ -62,6 +67,7 @@
           {% else %}
             <div class="featured_products home_thumbnail" style="min-height: 170px;">
               <div class="caption">
+                <span>{{ resort_bottom_left.location|default:"" }}</span>
                 <a href="{% url 'resorts:resort-detail' resort_bottom_left.id %}">
                   {{ resort_bottom_left.name|title }}</a>
               </div>
@@ -79,6 +85,7 @@
             <img class="img-responsive" style="width: 100%; max-height: 150px"
                  src="{{ resort_bottom_center.resortimage_set.first.image.url }}" alt="">
             <div class="caption">
+              <span>{{ resort_bottom_center.location|default:"" }}</span>
               <a href="{% url 'resorts:resort-detail' resort_bottom_center.id %}">
                 {{ resort_bottom_center.name|title }}</a>
             </div>
@@ -86,6 +93,7 @@
         {% else %}
           <div class="featured_products home_thumbnail" style="min-height: 170px;">
             <div class="caption">
+              <span>{{ resort_bottom_center.location|default:"" }}</span>
               <a href="{% url 'resorts:resort-detail' resort_bottom_center.id %}">
                 {{ resort_bottom_center.name|title }}</a>
             </div>
@@ -97,7 +105,7 @@
   </div>
 
   <div class="text-center home_page">
-    <h1 class="mt-15 mb-5">Special Offers</h1>
+    <h1 class="mt-15 mb-5 regular-font">Special Offers</h1>
   </div>
 
   <div class="col-md-11" style="float: none; margin: 0 auto">
@@ -110,6 +118,7 @@
             <img class="img-responsive" style="width: 100%; height: 344px"
                  src="{{ offer_top_left.image.url }}" alt="">
             <div class="caption">
+              <span>{{ offer_top_left.resort.name|default:"" }}</span>
               <a href="{% url 'offers:detail' offer_top_left.id %}">{{ offer_top_left.name|title }}</a>
             </div>
           </div>
@@ -117,6 +126,7 @@
         {% else %}
           <div class="featured_products home_thumbnail" style="min-height: 300px;">
             <div class="caption">
+              <span>{{ offer_top_left.resort.name|default:"" }}</span>
               <a href="{% url 'offers:detail' offer_top_left.id %}">
                 {{ offer_top_left.name|title }}</a>
             </div>
@@ -131,6 +141,7 @@
               <img class="img-responsive" style="width: 100%; max-height: 150px"
                  src="{{ offer_top_right.image.url }}" alt="">
               <div class="caption">
+                <span>{{ offer_top_right.resort.name|default:"" }}</span>
                 <a href="{% url 'offers:detail' offer_top_right.id %}">{{ offer_top_right.name|title }}</a>
               </div>
             </div>
@@ -138,6 +149,7 @@
           {% else %}
             <div class="featured_products home_thumbnail" style="min-height: 170px;">
               <div class="caption">
+                <span>{{ offer_top_right.resort.name|default:"" }}</span>
                 <a href="{% url 'offers:detail' offer_top_right.id %}">
                   {{ offer_top_right.name|title }}</a>
               </div>
@@ -151,6 +163,7 @@
               <img class="img-responsive" style="width: 100%; max-height: 150px"
                  src="{{ offer_bottom_left.image.url }}" alt="">
               <div class="caption">
+                <span>{{ offer_bottom_left.resort.name|default:"" }}</span>
                 <a href="{% url 'offers:detail' offer_bottom_left.id %}">{{ offer_bottom_left.name|title }}</a>
               </div>
             </div>
@@ -158,6 +171,7 @@
           {% else %}
             <div class="featured_products home_thumbnail" style="min-height: 170px;">
               <div class="caption">
+                <span>{{ offer_bottom_left.resort.name|default:"" }}</span>
                 <a href="{% url 'offers:detail' offer_bottom_left.id %}">
                   {{ offer_bottom_left.name|title }}</a>
               </div>
@@ -175,6 +189,7 @@
               <img class="img-responsive" style="width: 100%; max-height: 150px"
                src="{{ offer_bottom_center.image.url }}" alt="">
               <div class="caption">
+                <span>{{ offer_bottom_center.resort.name|default:"" }}</span>
                 <a href="{% url 'offers:detail' offer_bottom_center.id %}">{{ offer_bottom_center.name|title }}</a>
               </div>
             </div>
@@ -182,6 +197,7 @@
         {% else %}
           <div class="featured_products home_thumbnail" style="min-height: 170px;">
             <div class="caption">
+              <span>{{ offer_bottom_center.resort.name|default:"" }}</span>
               <a href="{% url 'offers:detail' offer_bottom_center.id %}">
                 {{ offer_bottom_center.name|title }}</a>
             </div>
