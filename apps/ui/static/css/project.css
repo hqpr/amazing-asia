@@ -48,8 +48,8 @@
 
 body {
     /*font-family: 'Open Sans Condensed', sans-serif;*/
-    /*font-family: 'Roboto', sans-serif;*/
-    font-family: 'proxima-nova', sans-serif;
+    font-family: 'Roboto', sans-serif;
+    /*font-family: 'proxima-nova', sans-serif;*/
     letter-spacing: 1px;
     background: #efefef;
 }
