@@ -93,13 +93,14 @@ select { -webkit-appearance: none; }
 .top_menu {
     background: #242e36 !important;
     font-size: 12px;
-    font-weight: bold;
+    font-weight: 300;
 }
 .top_menu li a {
     color: white;
     text-transform: uppercase;
     margin-top: 5px;
     margin-left: 25px;
+    font-weight: 300;
 }
 .top_menu li a:hover {
     color: gray;
@@ -144,6 +145,7 @@ select { -webkit-appearance: none; }
     padding: 10px;
     vertical-align: middle;
     font-size: 20px;
+    cursor: pointer;
 }
 
 .featured_products a {
@@ -404,7 +406,7 @@ hr {
     position: absolute;
     right: 0;
     padding: 14px 30px;
-    font-size: 11px;
+    font-size: 0.6rem;
     bottom: 0;
 }
 
@@ -450,14 +452,14 @@ a.btn-offer {
 }
 
 .red li:hover {
-    border: 1px solid #b63333;
-    background: #b63333;
-    color: #afafaf;
+    border: 1px solid #b63333 !important;
+    background: #b63333 !important;
+    color: #afafaf !important;
     text-decoration: none;
 }
 .red li.active:hover {
     background: transparent;
-    color: #b63333;
+    color: #b63333 !important;
 }
 
 .pagination li:hover {
@@ -487,7 +489,7 @@ a.btn-offer {
 }
 
 .page_menu li {
-    margin-right: 100px;
+    margin-right: 120px;
     line-height: 50px;
     display: block;
 }
@@ -495,7 +497,7 @@ a.btn-offer {
 .page_menu li a.active{
     color: #a8a8a8;
     background: #2a343f;
-    padding: 19px 0;
+    padding: 19px 40px;
 }
 
 .page_menu li a {
@@ -634,6 +636,10 @@ a.btn-offer {
     border-radius: 0;
     color: #cccccc;
     width: 100%;
+}
+
+.nav_button {
+    cursor: pointer;
 }
 
 

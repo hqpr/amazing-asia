@@ -46,7 +46,7 @@
               </div>
             {% else %}
 
-              <div class="featured_products home_thumbnail" style="min-height: 170px;">
+              <div class="featured_products home_thumbnail" style="min-height: 170px;" onclick="">
                 <div class="caption">
                   <span>{{ resort_top_right.location|default:"" }}</span>
                   <a href="{% url 'resorts:resort-detail' resort_top_right.id %}">
@@ -218,3 +218,12 @@
 
 
 {% endblock content %}
+
+{% block extra_js %}
+  <script>
+      $(".featured_products").click(function() {
+          window.location = $(this).find("a").attr("href");
+          return false;
+      });
+  </script>
+{% endblock extra_js %}

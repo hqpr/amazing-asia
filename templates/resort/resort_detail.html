@@ -45,7 +45,7 @@
   <div class="row page_content" style="position: relative" data-sticky_parent>
     <div class="col-md-7 mb-5">
 
-      <div class="tab-content padding-top-20">
+      <div class="tab-content padding-top-20" style="margin-top: 5rem;">
         <div class="tab-pane active" id="Villas" role="tabpanel">
 
           {% for villa in object.villasuite_set.all %}
@@ -204,7 +204,7 @@
 
     </div>
 
-    <div class="col-md-4 col-md-offset-1">
+    <div class="col-md-4 col-md-offset-1" style="margin-top: 5rem;">
       <div class="enquire text-center" id="sidebar">
         <p class="mb-5">Please book rooms in advance to ensure <br> availability and enjoy best prices.</p>
         <a class="button" href="{% url 'enquiry:add' %}">enquire now</a>
