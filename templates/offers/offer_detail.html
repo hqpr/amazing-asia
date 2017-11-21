@@ -4,11 +4,11 @@
 {% block title %} {{ object.name }}{% endblock %}
 
 {% block content %}
-  <div class="text-center page_title">
+  <div class="text-center page_title" style="margin-bottom: 8rem;">
     <h1 class="bold" style="font-size: 1.6rem; font-weight: 900">{{ object.name }}</h1>
     <h4>{{ object.offer_text|default:"" }}</h4>
   </div>
-  <div class="row page_content">
+  <div class="row page_content" style="margin-bottom: 15rem;">
   <div class="col-md-2"></div>
     <div class="col-md-4 mb-5">
       {% if object.image %}
