@@ -573,10 +573,10 @@ a.btn-offer {
 }
 
 /*#sidebar {*/
-    /*!*width: 190px;*!*/
-    /*position: fixed;*/
-    /*!*margin-left: 410px;*!*/
-    /*z-index: 99;*/
+/*!*width: 190px;*!*/
+/*position: fixed;*/
+/*!*margin-left: 410px;*!*/
+/*z-index: 99;*/
 /*}*/
 
 #page_menu {
@@ -675,5 +675,37 @@ a.btn-offer {
     }
     .enquire a.button {
         padding: 10px !important;
+    }
+}
+
+
+/* Phone */
+@media only screen
+  and (min-device-width: 320px)
+  and (max-device-width: 480px)
+  and (-webkit-min-device-pixel-ratio: 2) {
+    .page_menu li {
+        margin-right: 15px;
+        width: 55px;
+        line-height: normal;
+    }
+
+}
+
+/* Tablet */
+@media only screen
+and (min-device-width: 768px)
+and (max-device-width: 1024px)
+and (orientation: landscape)
+and (-webkit-min-device-pixel-ratio: 1) {
+    .enquire .button {
+        padding: 8px;
+        letter-spacing: 1px;
+    }
+    .enquire .mb-5 {
+        margin-bottom: 12px !important;
+    }
+    .page_menu li {
+        margin-right: -35px;
     }
 }
