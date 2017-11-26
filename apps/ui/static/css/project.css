@@ -658,6 +658,23 @@ a.btn-offer {
     cursor: pointer;
 }
 
+.lightbox .lb-image {
+    border: 0 !important;
+    border-radius: 0 !important;
+}
+
+.lb-nav a.lb-next {
+    margin-right: -80px !important;
+    opacity: 1 !important;
+}
+.lb-nav a.lb-prev {
+    margin-left: -80px !important;
+    opacity: 1 !important;
+}
+
+.lightboxOverlay {
+    opacity: .9!important;
+}
 
 @media (max-width: 767px) {
     .first_home_picture {
@@ -681,12 +698,18 @@ a.btn-offer {
 
 /* Phone */
 @media only screen
-  and (min-device-width: 320px)
-  and (max-device-width: 480px)
-  and (-webkit-min-device-pixel-ratio: 2) {
+and (min-device-width: 320px)
+and (max-device-width: 480px)
+and (-webkit-min-device-pixel-ratio: 2) {
     .page_menu li {
         margin-right: 15px;
         width: 55px;
+        line-height: normal;
+    }
+
+    .page_menu li a.active{
+        color: #a8a8a8;
+        background: #2a343f;
         line-height: normal;
     }
 

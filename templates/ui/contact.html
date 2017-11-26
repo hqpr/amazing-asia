@@ -61,8 +61,9 @@
       </div>
     </div>
     <div class="col-md-6 contact_sidebar">
-      <img class="img-responsive mb-1" src="{% static 'img/contact-us.jpg' %}" alt="">
-      <p>P.O. Box: 20265, <br>
+      <div id="googleMap" style="width:60%;height:225px;"></div>
+{#            <img class="img-responsive mb-1" src="{% static 'img/contact-us.jpg' %}" alt="">#}
+      <p style="margin-top: 1rem;">P.O. Box: 20265, <br>
         H.Handhuvarudheyge, <br>
         Henveyru, Male, <br>
         Republic of Maldives
@@ -72,3 +73,16 @@
     </div>
   </div>
 {% endblock content %}
+{% block extra_js %}
+  <script>
+      function myMap() {
+          var mapProp= {
+              center:new google.maps.LatLng(4.175533, 73.512828),
+              zoom:16,
+          };
+          var map=new google.maps.Map(document.getElementById("googleMap"),mapProp);
+      }
+  </script>
+
+  <script src="https://maps.googleapis.com/maps/api/js?callback=myMap"></script>
+{% endblock extra_js %}
