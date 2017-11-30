@@ -53,20 +53,26 @@
         <div class="tab-pane active" id="Villas" role="tabpanel">
 
           {% for villa in object.villasuite_set.all %}
-            {% if villa.villasuiteimage_set.all %}
-
-              <a href="{{ villa.villasuiteimage_set.first.image.url }}" data-lightbox="example-set">
-                <img class="img-responsive" src="{{ villa.villasuiteimage_set.first.image.url }}" alt="image-1" />
-              </a>
-
-              <div style="display: none">
-                {% for im in villa.villasuiteimage_set.all %}
-                  <a href="{{ im.image.url }}" data-lightbox="example-set">
-                    <img src="{{ im.image.url }}" alt="">
-                  </a>
-                {% endfor %}
+             {% if villa.villasuiteimage_set.all %}
+              <div id="carouselVillaIndicators" class="carousel slide" data-ride="carousel">
+                <div class="carousel-inner" role="listbox">
+                  <div class="carousel-item active"
+                       style="background-image: url('{{ villa.villasuiteimage_set.first.image.url }}')">
+                  </div>
+                  {% for im in villa.villasuiteimage_set.all %}
+                    <div class="carousel-item" style="background-image: url('{{ im.image.url }}')">
+                    </div>
+                  {% endfor %}
+                </div>
+                <a class="carousel-control-prev" href="#carouselVillaIndicators" role="button" data-slide="prev">
+                  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                  <span class="sr-only">Previous</span>
+                </a>
+                <a class="carousel-control-next" href="#carouselVillaIndicators" role="button" data-slide="next">
+                  <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                  <span class="sr-only">Next</span>
+                </a>
               </div>
-
             {% endif %}
 
             <h1>{{ villa.name }}</h1>
@@ -81,19 +87,25 @@
         <div class="tab-pane" id="Wines" role="tabpanel">
           {% for wine in object.winedine_set.all %}
             {% if wine.winedineimage_set.all %}
-
-              <a href="{{ wine.winedineimage_set.first.image.url }}" data-lightbox="example-set">
-                <img class="img-responsive" src="{{ wine.winedineimage_set.first.image.url }}" alt="image-1" />
-              </a>
-
-              <div style="display: none">
-                {% for im in wine.winedineimage_set.all %}
-                  <a href="{{ im.image.url }}" data-lightbox="example-set">
-                    <img src="{{ im.image.url }}" alt="">
-                  </a>
-                {% endfor %}
+              <div id="carouselWineIndicators" class="carousel slide" data-ride="carousel">
+                <div class="carousel-inner" role="listbox">
+                  <div class="carousel-item active"
+                       style="background-image: url('{{ wine.winedineimage_set.first.image.url }}')">
+                  </div>
+                  {% for im in wine.winedineimage_set.all %}
+                    <div class="carousel-item" style="background-image: url('{{ im.image.url }}')">
+                    </div>
+                  {% endfor %}
+                </div>
+                <a class="carousel-control-prev" href="#carouselWineIndicators" role="button" data-slide="prev">
+                  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                  <span class="sr-only">Previous</span>
+                </a>
+                <a class="carousel-control-next" href="#carouselWineIndicators" role="button" data-slide="next">
+                  <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                  <span class="sr-only">Next</span>
+                </a>
               </div>
-
             {% endif %}
 
             <h1>{{ wine.name }}</h1>
@@ -107,19 +119,25 @@
         <div class="tab-pane" id="Wells" role="tabpanel">
           {% for well in object.wellness_set.all %}
             {% if well.wellnessimage_set.all %}
-
-              <a href="{{ well.wellnessimage_set.first.image.url }}" data-lightbox="example-set">
-                <img class="img-responsive" src="{{ well.wellnessimage_set.first.image.url }}" alt="image-1" />
-              </a>
-
-              <div style="display: none">
-                {% for im in well.wellnessimage_set.all %}
-                  <a href="{{ im.image.url }}" data-lightbox="example-set">
-                    <img src="{{ im.image.url }}" alt="">
-                  </a>
-                {% endfor %}
+              <div id="carouselWellIndicators" class="carousel slide" data-ride="carousel">
+                <div class="carousel-inner" role="listbox">
+                  <div class="carousel-item active"
+                       style="background-image: url('{{ well.wellnessimage_set.first.image.url }}')">
+                  </div>
+                  {% for im in well.wellnessimage_set.all %}
+                    <div class="carousel-item" style="background-image: url('{{ im.image.url }}')">
+                    </div>
+                  {% endfor %}
+                </div>
+                <a class="carousel-control-prev" href="#carouselWellIndicators" role="button" data-slide="prev">
+                  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                  <span class="sr-only">Previous</span>
+                </a>
+                <a class="carousel-control-next" href="#carouselWellIndicators" role="button" data-slide="next">
+                  <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                  <span class="sr-only">Next</span>
+                </a>
               </div>
-
             {% endif %}
 
             <h1>{{ well.name }}</h1>
@@ -133,19 +151,25 @@
         <div class="tab-pane" id="Exp" role="tabpanel">
           {% for exp in object.experience_set.all %}
             {% if exp.experienceimage_set.all %}
-
-              <a href="{{ exp.experienceimage_set.first.image.url }}" data-lightbox="example-set">
-                <img class="img-responsive" src="{{ exp.experienceimage_set.first.image.url }}" alt="image-1" />
-              </a>
-
-              <div style="display: none">
-                {% for im in exp.experienceimage_set.all %}
-                  <a href="{{ im.image.url }}" data-lightbox="example-set">
-                    <img src="{{ im.image.url }}" alt="">
-                  </a>
-                {% endfor %}
+              <div id="carouselExpIndicators" class="carousel slide" data-ride="carousel">
+                <div class="carousel-inner" role="listbox">
+                  <div class="carousel-item active"
+                       style="background-image: url('{{ exp.experienceimage_set.first.image.url }}')">
+                  </div>
+                  {% for im in exp.experienceimage_set.all %}
+                    <div class="carousel-item" style="background-image: url('{{ im.image.url }}')">
+                    </div>
+                  {% endfor %}
+                </div>
+                <a class="carousel-control-prev" href="#carouselExpIndicators" role="button" data-slide="prev">
+                  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                  <span class="sr-only">Previous</span>
+                </a>
+                <a class="carousel-control-next" href="#carouselExpIndicators" role="button" data-slide="next">
+                  <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                  <span class="sr-only">Next</span>
+                </a>
               </div>
-
             {% endif %}
 
             <h1>{{ exp.name }}</h1>
